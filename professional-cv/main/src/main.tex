@@ -1,0 +1,429 @@
+% FortySecondsCV LaTeX template
+% Copyright © 2019 René Wirnata <rene.wirnata@pandascience.net>
+% Licensed under the 3-Clause BSD License. See LICENSE file for details.
+%
+% Attributions
+% ------------
+% * fortysecondscv is based on the twentysecondcv class by Carmine Spagnuolo 
+%   (cspagnuolo@unisa.it), released under the MIT license and available under
+%   https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex
+% * further attributions are indicated immediately before corresponding code
+
+
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+\documentclass[
+  a4paper, 
+%   showframes,
+%   vline=2.2em,
+%   maincolor=cvgreen,
+%   sectioncolor=red,
+%   subsectioncolor=orange,
+%   itemtextcolor=black!80,
+%   sidebarwidth=0.4\paperwidth,
+%   topbottommargin=0.03\paperheight,
+%   leftrightmargin=20pt,
+%   proilepicsize=4.5cm,
+]{fortysecondscv}
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+
+% take care of proper font encoding
+\ifxetexorluatex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+% \newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+% \usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+  % defaut font size is \large, so adjust to harmonize with sidebar layout
+  bubble center node font = \footnotesize,
+  bubble node font = \footnotesize,
+  % default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+  bubble center node size = 0.4\sidebartextwidth,
+  bubble node size = 0.25\sidebartextwidth,
+  distance center/other bubbles = 1.5em,
+  % set center bubble color
+  bubble center node color = maincolor!70,
+  % define the list of colors usable in the diagram
+  set color list = {maincolor!10, maincolor!40,
+  maincolor!20, maincolor!60, maincolor!35},
+  % sets the opacity at which the bubbles are shown
+  bubble fill opacity = 0.8,
+}
+
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+
+%% mandatory information
+% your name
+\cvname{Matteo Barbetti}
+% job title/career
+\cvjobtitle{Ph.D. Student in\\[0.2em] 
+            Smart Computing}
+
+%% optional information
+% profile picture
+\cvprofilepic{professional-cv/main/img/profile.png}
+% date of birth
+\cvbirthday{May 6, 1994}
+% short address/location, use \newline if more than 1 line is required
+\cvaddress{Via Vittorio Emanuele II 193,
+           \newline{50134, Firenze, Italy}}
+% phone number
+\cvphone{+39 347 8595002}
+% email address
+\cvmail{matteo.barbetti.94@gmail.com}
+% personal website
+\cvsite{https://mbarbetti.github.io}
+% LinkedIn profile name
+%\cvlinkedin{matteo-barbetti}
+% GitHub profile name
+%\cvgithub{mbarbetti}
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+% add more profile sections to sidebar on first page
+\addtofrontsidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+	\graphicspath{{professional-cv/img/flags/}}
+	
+	\vspace{0.5cm}
+	
+    \profilesection{About Me}
+	\aboutme{
+		Ph.D. Student in Smart Computing at the University of Florence, I deal with Artificial Intelligence and its applications to Particle and Medical Physics. Passionate about innovation and scientific dissemination, I never refuse going out to discuss new ideas.
+	}
+	
+	\vspace{0.5cm}
+	
+	\profilesection{Memberships}
+	\begin{memberships}
+		\membership[4em]{professional-cv/main/img/AISF_logo.png}
+		{\href{http://ai-sf.it}{Associazione Italiana
+		                        \newline{Studenti di Fisica}}}\\
+		\membership[4em]{professional-cv/main/img/INFN_logo.png}
+		{\href{https://www.fi.infn.it}{Istituto Nazionale di
+		                               \newline{Fisica Nucleare}}}\\
+%    	\membership[4em]{professional-cv/main/img/CERN_logo.png}
+%    	{\href{https://home.cern}{Conseil Européen pour 
+%    	                          \newline{la Recherche Nucléaire}}}\\
+		\membership[4em]{professional-cv/main/img/LHCb_logo.jpg}
+		{\href{http://lhcb-public.web.cern.ch/lhcb-public/}{LHCb Collaboration}}
+%		\membership[4em]{}{\rule{\linewidth}{1pt}}
+	\end{memberships}
+	
+	\vspace{0.5cm}
+	
+	% social network accounts incl. proper hyperlinks
+	\profilesection{Social Network}
+		\begin{icontable}{2.5em}{1em}
+			\social{\faLinkedinSquare}
+				{https://www.linkedin.com/in/matteo-barbetti}
+				{matteo-barbetti}
+			\social{\faTwitter}
+				{https://twitter.com/mbarbetz}
+				{@mbarbetz}
+			\social{\faGithub}
+				{https://github.com/mbarbetti}
+				{mbarbetti}
+%			\social{\faGitlab}
+%				{https://gitlab.com/mbarbetti}
+%				{mbarbetti}
+		\end{icontable}
+}
+
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 2nd PAGE
+%-------------------------------------------------------------------------------
+\addtobacksidebar{
+
+	\vspace{0.75cm}
+
+	\profilesection{Soft Skills}
+        \skill{\faSitemap}{Complex problem-solving}
+		\skill{\faRocket}{Analytical thinking and innovation}
+		\skill{\faLineChart}{Critical thinking and analysis}
+ 		\skill{\faSearchPlus}{Attention to detail, trustworthiness}
+ 		\skill{\faUsers}{Leadership and social influence}
+
+    \vspace{0.75cm}
+
+	\profilesection{Technical Skills}
+		\skill{\faLaptop}{\underline{Operating systems}}
+		    \skill[1.8em]{\faWindows}{Windows}
+		    \skill[1.8em]{\faApple}{Mac OS}
+		    \skill[1.8em]{\faLinux}{Linux}
+		\skill{\faTerminal}{\underline{Programming languages}}
+		    \pointskill[1.8em]{\faCode}{Python}{4}[5]
+		    \pointskill[1.8em]{\faCode}{C/C++}{2}[5]
+%		    \pointskill[1.8em]{\faCode}{LabVIEW}{2}[5]
+%		    \pointskill[1.8em]{\faCode}{Bash}{1}[5]
+		\skill{\faCubes}{\underline{Machine Learning frameworks}}
+		    \skill[1.8em]{\faCube}{Scikit-Learn}
+		    \skill[1.8em]{\faCube}{TensorFlow}
+		\skill{\faCogs}{\underline{Other suites}}
+		    \skill[1.8em]{\faCog}{Visual Studio Code}	
+		    \skill[1.8em]{\faCog}{Google Workspace}		 
+		    \skill[1.8em]{\faCog}{Microsoft Office}
+		    \skill[1.8em]{\faCog}{LaTeX}
+		    \skill[1.8em]{\faCog}{Git}
+
+    \vspace{0.75cm}
+
+	\profilesection{Languages}
+		\pointskill{\flag{professional-cv/main/img/flags/IT.png}}{Italian}{5}[5]
+  	    \pointskill{\flag{professional-cv/main/img/flags/GB.png}}{English}{3}[5]
+  	    \pointskill{\flag{professional-cv/main/img/flags/ES.png}}{Spanish}{1}[5]
+  	    
+%	\profilesection{Diagrams}
+%	\chartlabel{Bubble Diagram}
+%	\begin{figure}\centering
+%		\smartdiagram[bubble diagram]{
+%			\textcolor{white}{\textbf{Being a}} \\ 
+%			\textcolor{white}{\textbf{Panda}}, % center bubble	
+%			\textcolor{black!90}{Eating},
+%			\textcolor{black!90}{Sleeping},
+%			\textcolor{black!90}{Rolling},
+%			\textcolor{black!90}{Playing},
+%			\textcolor{black!90}{Chilling}
+%		}
+%	\end{figure}
+%
+%	\chartlabel{Wheel Chart}
+%
+%	\wheelchart{4em}{2em}{%
+% 	20/3em/maincolor!50/Chill,
+%	15/3em/maincolor!15/Play,
+%  	30/4em/maincolor!40/Sleep,
+%  	20/3em/maincolor!20/Eat
+%	}
+%
+%	\profilesection{Barskills}
+%	\barskill{\faSkyatlas}{Wearing asian rice hats}{60}
+%	\barskill{\faImage}{Playing Chess}{30}
+%	\barskill{\faMusic}{Playing the bamboo flute}{50}
+}
+
+
+%-------------------------------------------------------------------------------
+%                         TABLE ENTRIES RIGHT COLUMN
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\makefrontsidebar
+
+
+\cvsection{Education}
+
+%\cvsubsection{Postgraduate Training}
+%\begin{cvtable}[2]
+%	\cvitem{2009 -- 2010}{Post-Doc Panda Studies}{Panda Academy}
+%		{In-depth studies on the impact of bamboo nutrition for young pandas and
+%		its relation to relaxing, sleeping and snoozing parts of the day.}
+%	\cvitem{2008 -- 2009}{Research Stay Europe}{European Panda Labs}
+%		{Spending one year abroad teaching european panda facilities about the
+%		newest findings and research in the field of asian rice hat covers and
+%		applications for bamboo as a material.}
+%\end{cvtable}
+
+\cvsubsection{Study}
+\begin{cvtable}[2]
+	\cvitem{2020 -- now}{\href{https://smartcomputing.unifi.it/}{Ph.D. in Smart Computing}}
+	{Università degli Studi di Firenze}
+		{\underline{Focus:} Multidisciplinary Ph.D. program aimed to provide expertise on advanced computational methods to meet the needs of society.\\
+		\underline{Topic:} Smart Computing Techniques applied to Medical Physics, Nuclear Physics and Particle Physics.}
+	\cvitem{2017 -- 2020}{Master's degree in Particle Physics}
+	{Università degli Studi di Firenze}
+		{\underline{Focus:} Curriculum of studies oriented to Physics Data Analysis with a strong focus on modern Computing Technologies, like Machine Learning and Artificial Intelligence.\\
+		\underline{Score:} $110/110$ \emph{cum laude}}
+	\cvitem{}{Master thesis}{Genève, Switzerland}
+		{\underline{Focus:} Development of a Python-based simulation framework for Particle Physics applications integrated with Deep Learning solutions to parameterize the detector response of the LHCb experiment.\\
+		\underline{Title:} ``Techniques for parametric simulation with deep neural networks and implementation for the LHCb experiment at CERN and its future upgrades''.}
+	\cvitem{2013 -- 2017}{Bachelor's degree in Physics}
+	{Università degli Studi di Firenze}
+		{\underline{Focus:} Standard course of study in Physics and Astrophysics during which I discovered a natural inclination towards Experimental Science and Data Analysis.\\
+		\underline{Score:} $110/110$}
+	\cvitem{}{Bachelor thesis}{Genève, Switzerland}
+		{\underline{Focus:} Data Analysis work in Particle Physics in collaboration with the 
+		 LHCb experiment at CERN.\\
+		 \underline{Title:} ``Study of the charmonium resonances in $B^+ \to p \bar{p} K^+$ 
+		 and $B^+ \to p \bar{p} \gamma K^+$ decays with the LHCb experiment at CERN''.}
+	\cvitem{2008 -- 2013}{Previous education}{Liceo Scientifico G. Galilei di Terni}
+		{\underline{Focus:} First general smattering on Scientific Approach and Critical Thinking thanks to which I decided to continue studies in Physics.\\
+		 \underline{Score:} $100/100$ \textit{cum laude}}
+\end{cvtable}
+
+\vskip 2.5mm
+
+\cvsubsection{Other courses}
+\begin{cvtable}[2]
+	\cvitem{2018 -- 2019}{\href{https://www.unifi.it/impresacampus}{Impresa Campus Unifi}}{Università degli Studi di Firenze}
+		{\underline{Focus:} Development of innovative ideas and business culture in university context   with Team Building path and personal expert support.}
+	\cvitem{2018}{\href{https://www.unifi.it/vp-8678-palestra-di-intraprendenza.html}{Palestra di Intrapredenza}}{Università degli Studi di Firenze}
+		{\underline{Focus:} Evaluation of personal motivation and entrepreneurial propensity thanks to Design Thinking and LEGO Serious Play\textsuperscript{\textregistered} methods.}
+\end{cvtable}
+
+\vskip 5mm
+
+\cvsection{Experience}
+\cvsubsection{Tutoring}
+\begin{cvtable}[2]
+	\cvitem{2018 -- now}{Teaching assistant}{Università degli Studi di Firenze}
+	    {Support to laboratory activities for the BSc degree course in Physics. Since October 2020, I am responsible for brief lessons of Python for the third year students.}
+%	\cvitem{2018}{Student assistant}{Università degli Studi di Firenze}
+%	    {Welcome and orientation service for science students.}
+	\cvitem{2016 -- now}{Maths and Physics Reps Teacher}{}
+	    {Private lessons for high-school and university students.}
+\end{cvtable}
+
+\newpage
+\makebacksidebar
+
+\cvsubsection{Italian Association of Physics Student (AISF)}
+\begin{cvtable}[2]
+    \cvitem{2020 -- now}{Vice President}{}
+	    {Support to Association organization.}
+	\cvitem{2019 -- now}{Secretary}{}
+	    {Member of the Executive Committee that organizes and coordinates the Italian Local Committees.}
+	\cvitem{2018 -- 2019}{President of the Florence Local Committee}{}
+	    {Organization of events and representative for about 40 members.}
+	\cvitem{2018 -- now}{Member of the Editorial Board of \textit{Sistemi di Riferimento}}{}
+	    {Vulgarization activity to valorise Italian Physics Departments.}
+	\cvitem{2017 -- 2018}{Vice President of the Florence Local Committee}{}
+	    {Support to events organization and Local Committee coordination.}
+\end{cvtable}
+
+%\newpage
+%\makebacksidebar
+
+%\cvsubsection{Other experiences}
+%\begin{cvtable}[2]
+%	\cvitem{2016}{Science Library assistant}{Università degli Studi di Firenze}
+%	    {Support to science library workers and book arrangement.}
+%	\cvitem{2011 -- 2013}{Basketball officer}{Federazione Italiana Pallacanestro}
+%	    {Referee assistant during basketball matches.}
+%\end{cvtable}
+
+
+\cvsection{Conferences, Workshops and Schools}
+\begin{cvtable}[2]
+    \cvitem{2021}{\href{https://indico.cern.ch/event/1017080/}{8th Thematic CERN School of Computing}}{online}
+        {\underline{Focus:} Scientific software for heterogeneous architectures.}
+%    \cvitem{2021}{\href{https://agenda.infn.it/event/25855/}{First ML-INFN Hackathon}}{online}
+ %       {\underline{Focus:} Introduction to Machine Learning topics interesting for INFN (use-case selected: Medical Physics).}
+    \cvitem{2021}{\href{https://agenda.infn.it/event/25889/}{Workshop della Commissione Calcolo e Reti dell'INFN}}{online}
+        {Participation with a presentation titled ``Simulating the LHCb detector with Generative Adversarial Networks''.}
+    \cvitem{2021}{1st CloudBank EU Workshop}{online}
+        {Participation with a presentation titled ``LHCb deployment in AWS''.}
+    \cvitem{2020}{\href{https://site.unibo.it/school-physical-sensing-and-processing/en}{Summer School in Physical Sensing and Processing}}{online}
+	    {\underline{Focus:} Sensing devices, DAQ systems and data processing strategies across various Physics subdomains.}
+	\cvitem{2019}{\href{http://www.diitet.cnr.it/workshop-artificial-intelligence-in-health-and-well-being/}{Artificial Intelligence in Health and Well-Being}}{Firenze, Italy}
+	    {\underline{Focus:} Artificial Intelligence applied to health and well-being.}
+%	\cvitem{2019}{\href{http://ai-sf.it/cisf19/}{Italian Conference of Physics Students 2019}}{Milano, Italy}
+%	    {Participation with a workshop titled ``\textit{Dietro l'Articolo SdR}''.}
+%	\cvitem{2018}{\href{http://ai-sf.it/cisf18/}{Italian Conference of Physics Students 2018}}{Pisa, Italy}
+%	    {Representative for the Florence Local Committee.}
+%	\cvitem{2017}{\href{http://www.ai-sf.it/cisf2017/}{Italian Conference of Physics Students 2017}}{Bari, Italy}
+%	    {Participation with a poster titled ``\textit{I ragazzi di via Panisperna}''.}
+\end{cvtable}
+
+
+\cvsection{Outreach and Dissemination}
+\begin{cvtable}[2]
+    \cvitem{2021}{Book author}{Sassi Junior}
+        {On behalf of the INFN, I have prepared a paragraph dedicated to Artificial Intelligence for ``Inventions'', a science book for kids.}
+	\cvitem{2018}{Jury member}{Premio Galileo}
+	    {\textit{Premio Galileo} is a literary prize for science communication.}
+	\cvitem{2017 -- 2018}{Blog author}{Fisici Senza Palestra}
+	    {Dissemination of science on \href{https://www.fisicisenzapalestra.com}{\textit{Fisici Senza Palestra}} blog.}
+\end{cvtable}
+
+
+\cvsection{Awards}
+\begin{cvtable}[2]
+	\cvitem{2019}{INFN scolarship}{Istituto Nazionale di Fisica Nucleare}
+	    {Scholarship funded by the National Institute for Nuclear Physics (INFN) for spending three months at CERN.}
+	\cvitem{2017}{Scholarship for thesis abroad}{Università degli Studi di Firenze}
+	    {Sholarship funded by the University of Florence for spending a part of the bachelor thesis work at CERN.}
+	\cvitem{2013}{Scholar merit award}{Liceo Scientifico G. Galilei di Terni}
+	    {Merit award for the excellence of high-school career.}
+\end{cvtable}
+
+
+%\cvsection{Publications}
+%\begin{cvtable}
+%	\cvpubitem{Cooking: 100 recipes for lazy Pandas}{Me and My Panda Friends}
+%		{Panda's Culinary World}{2010}
+%	\cvpubitem{Pandastasia}{Still Me}{Bamboo Books Assoc.}{2005}
+%\end{cvtable}
+
+
+%\cvsection{Extra-Curricular Activities}
+%\begin{cvtable}
+%	\cvitemshort{Relaxing}{Master the fine art of relaxing everywhere}
+%	\cvitemshort{Music}{Playing the bamboo flute in the 1st Panda Orchestra}
+%	\cvitemshort{Education}{Teaching young pandas to be more panda-like}
+%\end{cvtable}
+
+
+%\cvsection{section}
+%\cvsubsection{Subsection}
+%\begin{cvtable}
+%	\cvitem{<dates>}{<cv-item title>}{<location>}{<optional: description>}
+%\end{cvtable}
+
+
+%\cvsubsection{One-line without description}
+%\begin{cvtable}
+%	\cvitem{Award}{One-line description}{Sponsor}{}
+%	\cvitem{Award}{One-line description}{Sponsor}{}
+%	\cvitem{Award}{One-line description}{Sponsor}{}
+%\end{cvtable}
+
+%\cvsection{cvitemshort}
+%\cvsubsection{One-line}
+%\begin{cvtable}
+%	\cvitemshort{Key}{Some further description}
+%	\cvitemshort{Key}{Some further description}
+%	\cvitemshort{Key}{Some further description}
+%\end{cvtable}
+
+%\cvsubsection{Multi-line with longer description}
+%\begin{cvtable}
+%	\cvitemshort{Key}{Some further description. Can fill even more than
+%		only one single line while still keeping the correct indendation level.}
+%	\cvitemshort{Key}{Some further description. Can fill even more than
+%		only one single line while still keeping the correct indendation level.}
+%	\cvitemshort{Key}{Some further description. Can fill even more than
+%		only one single line while still keeping the correct indendation level.}
+%\end{cvtable}
+
+%\cvsection{cvpubitem}
+%\begin{cvtable}
+%	\cvpubitem{Publication title}{Authors}{Journal}{Year}
+%	\cvpubitem{Publication title}{Authors}{Journal}{Year}
+%	\cvpubitem{Publication title that is spanning over multiple lines and still
+%		does not look too bad}{Authors}{Journal}{Year}
+%\end{cvtable}
+
+\cvsignature
+
+\end{document} 
