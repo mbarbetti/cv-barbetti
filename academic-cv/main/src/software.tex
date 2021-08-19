@@ -1,8 +1,35 @@
+\newcommand{\pkgname}[1]
+  {\normalsize \color{hlcolor-0} \textbf{#1}}
+
+\newcommand{\pkginfo}[1]
+  {\small \color{hlcolor-1} \textsc{#1}}
+  
+\newcommand{\pkgdesc}[1]
+  {\normalsize \color{maincolor} {#1}}
+
+
 \section*{Open Source Software}
-
-\textit{*Year indicates when the project was started. All projects are currently ongoing.}
-
-\begin{tabular}{p{0.05\textwidth} p{0.95\textwidth}}
-2014 & \textbf{HinetPy} -- A python package to request and process seismic waveform data from Hi-net. \newline
-       \url{https://github.com/seisman/HinetPy/} \\
-\end{tabular}
+\begin{cvcontent}
+  %
+  %  OptunAPI
+  % ==========
+  \pkgname{OptunAPI} \hfill
+  \button{https://pypi.org/project/optunapi/}{\faPython}
+  \button{https://github.com/mbarbetti/optunapi}{\faGithub}\\
+  \pkginfo{Python}\\
+  \pkgdesc{API to distribute hyperparameters optimization through HTTP requests}\\ [2.5mm]
+  %
+  %  LNHunter
+  % ==========
+  \pkgname{LNHunter} \hfill
+  \button{https://github.com/mbarbetti/LNHunter}{\faGithub}\\
+  \pkginfo{Jupyter Notebook, Python}\\
+  \pkgdesc{Bulky mediastinal lymphoma classification with machine learning techniques}\\ [2.5mm]
+  %
+  %  lab3-numpyntro
+  % ================
+  \pkgname{lab3-numpyntro} \hfill
+  \button{https://github.com/mbarbetti/lab3-numpyntro}{\faGithub}\\
+  \pkginfo{Jupyter Notebook}\\
+  \pkgdesc{Introduction to NumPy for Physics Laboratory III students of the University of Firenze}
+\end{cvcontent}

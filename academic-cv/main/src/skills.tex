@@ -1,20 +1,21 @@
-\section*{Technical skills}
-\begin{tabular}{rll}
-  {\small Operating systems:} & Windows\\
-    & Mac OS\\
-    & Linux\\ [3mm]
-                                        
-  {\small Programming languages:} 
-    & Python & {\small \emph {with PyROOT, NumPy and Pandas}}\\
-    & C/C++ & {\small \emph {with ROOT}}\\ [3mm]
-            
-  {\small Machine Learning frameworks:} 
-    & Scikit-Learn\\
-    & TensorFlow & {\small \emph {with Keras}}\\ [3 mm]
-                                            
-  {\small Other suites:} 
-    & Google Workspace\\
-    & Microsoft Office & {\small \emph {certified with ECDL (May 2012)}}\\
-    & \LaTeX\\
-    & Git
-\end{tabular}
+\newcommand{\skill}[2]
+  {\small \color{maincolor}
+    \begin{tabular}{@{} p{0.2\linewidth} p{0.64\linewidth}}
+      \textbf{\color{hlcolor-0} #1} & \textcolor{hlcolor-1}{#2}
+    \end{tabular}
+  }
+  
+\newcommand{\github}
+  {\small \url{https://github.com/\GitHubAccount}}
+
+
+\section*{Computer Skills}
+\begin{cvcontent}
+  %
+  \skill{GitHub}{\github}\\ [0.5mm]
+  %
+  \skill{Languages}{Python, C/C++, TeX}\\ [0.5mm]
+  %
+  \skill{OS}{Windows, Mac OS, Linux}
+  %
+\end{cvcontent}

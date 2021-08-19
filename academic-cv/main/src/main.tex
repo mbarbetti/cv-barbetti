@@ -11,6 +11,7 @@
 \newcommand{\Me}{\textbf{\LastName, \Initials.}}  % for citations
 \newcommand{\Email}{matteo.barbetti@unifi.it}
 \newcommand{\Website}{https://mbarbetti.github.io}
+\newcommand{\GitHubAccount}{mbarbetti}
 \newcommand{\Phone}{+39\,347\,8595002}
 \newcommand{\Affiliation}{
   Department of Physics and Astronomy, University of Florence
@@ -35,7 +36,7 @@
 
 % Set the page margins
 % --------------------
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[left=1.5cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 
 % Remove space between items
 % --------------------------
@@ -50,22 +51,26 @@
 \definecolor{iconcolor}{HTML}{990000}
 \definecolor{urlcolor}{HTML}{990000}
 \definecolor{hlcolor-0}{HTML}{000000}
-\definecolor{hlcolor-1}{HTML}{474747}
+\definecolor{hlcolor-1}{HTML}{666666}
 \definecolor{hlcolor-2}{HTML}{990000}
 
 % Enable using special symbols
 % ------------------------------
-\usepackage{fontawesome}
-\usepackage{stmaryrd}
+\usepackage{fontawesome5}
 \usepackage{textcomp}
 
 % Enable alternative underlining
 % ------------------------------
 \usepackage{soul}
 
+% Enable multiple columns
+% -----------------------
+\usepackage{multicol}
+
 % Set fancy headers
 % -----------------
 \usepackage{fancyhdr}
+\usepackage{lastpage}
 \pagestyle{fancy}
 \fancyhf{}
 \chead{
@@ -77,8 +82,16 @@
   Last updated: \monthyear\today
 }
 \rhead{}
-\cfoot{\fontsize{10pt}{0}\selectfont \thepage}
+\cfoot{\fontsize{10pt}{0}\selectfont \thepage\ of \pageref{LastPage}}
 \renewcommand{\headrulewidth}{0pt}
+
+% Define first page header
+% ------------------------
+\fancypagestyle{firstpage}
+{
+  \fancyhf{}
+  \cfoot{\fontsize{10pt}{0}\selectfont \thepage\ of \pageref{LastPage}}
+}
 
 % Sections customization
 % ----------------------
@@ -90,12 +103,12 @@
   {}  % before-code
   [
     \vspace{-0.5cm}%
-    {\color{maincolor}\rule{\textwidth}{0.3pt}}
+    {\color{maincolor}\rule{\linewidth}{0.3pt}}
   ] % after-code
 \titlespacing{\section}{0cm}{0.5cm}{0.05cm}
 
-%
-% 
+% Define section indentation
+% --------------------------
 \newenvironment{cvcontent}{
   \leftskip=0.5cm\rightskip=0cm
   \noindent\ignorespaces}{\par}
@@ -127,7 +140,7 @@
 
 % No header for the first page
 % ----------------------------
-\thispagestyle{empty}
+\thispagestyle{firstpage}
 
 %  HEADER
 % ========
@@ -156,10 +169,6 @@
 %  INTERESTS
 % ===========
 \input{interests}
-
-%  ABOUT ME
-% ==========
-%\input{aboutme}
 
 %  EDUCATION
 % ===========
@@ -193,6 +202,11 @@
 % ===============
 \input{dissemination}
 
+%  COMMUNITY
+% ===========
+\input{community}
+
+\begin{multicols}{2}
 %  TECHNICAL SKILLS
 % ==================
 \input{skills}
@@ -200,5 +214,6 @@
 %  LANGUAGES
 % ===========
 \input{languages}
+\end{multicols}
 
 \end{document}
