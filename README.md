@@ -1,5 +1,5 @@
 # Curriculum Vitae
-Matteo Barbetti | Ph.D. student in Smart Computing | University of Firenze, INFN-Firenze
+Matteo Barbetti | Ph.D. student in Smart Computing | University of Florence, INFN-Firenze
 
 ### Academic CV
 * Latest CV [[PDF](https://github.com/mbarbetti/cv-barbetti/blob/main/academic-cv/main/cv-barbetti.pdf)] [[src](https://github.com/mbarbetti/cv-barbetti/blob/main/academic-cv/main/src)]
