@@ -1,7 +1,7 @@
 \documentclass[a4paper, 11pt]{article}
 
-% ID information
-% --------------
+%% ID information
+%% --------------
 \newcommand{\Title}{Curriculum Vitae}
 \newcommand{\FirstName}{Matteo}
 \newcommand{\LastName}{Barbetti}
@@ -20,30 +20,30 @@
   Room 183, Via Sansone 1, 50019 Sesto Fiorentino (FI), Italy
 }
 
-% Define font typeface
-% --------------------
+%% Define font typeface
+%% --------------------
 \usepackage[T1]{fontenc}
 \usepackage{helvet}
 
-% Control the font size
-% ---------------------
+%% Control the font size
+%% ---------------------
 \usepackage{anyfontsize}
 
-% Define new date format
-% ----------------------
+%% Define new date format
+%% ----------------------
 \usepackage{datetime}
 \newdateformat{monthyear}{\monthname[\THEMONTH], \THEYEAR}
 
-% Set the page margins
-% --------------------
+%% Set the page margins
+%% --------------------
 \usepackage[left=1.5cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 
-% Remove space between items
-% --------------------------
+%% Remove space between items
+%% --------------------------
 \usepackage[inline]{enumitem}
 
-% Use custom colors
-% -----------------
+%% Use custom colors
+%% -----------------
 \usepackage[usenames,dvipsnames]{xcolor}
 \definecolor{maincolor}{HTML}{000000}
 \definecolor{titlecolor}{HTML}{000000}
@@ -54,8 +54,8 @@
 \definecolor{hlcolor-1}{HTML}{666666}
 \definecolor{hlcolor-2}{HTML}{990000}
 
-% Enable using special symbols
-% ------------------------------
+%% Enable using special symbols
+%% ------------------------------
 \usepackage{fontawesome5}
 \usepackage{textcomp}
 
@@ -63,12 +63,12 @@
 % ------------------------------
 \usepackage{soul}
 
-% Enable multiple columns
-% -----------------------
+%% Enable multiple columns
+%% -----------------------
 \usepackage{multicol}
 
-% Set fancy headers
-% -----------------
+%% Set fancy headers
+%% -----------------
 \usepackage{fancyhdr}
 \usepackage{lastpage}
 \pagestyle{fancy}
@@ -85,36 +85,36 @@
 \cfoot{\fontsize{10pt}{0}\selectfont \thepage\ of \pageref{LastPage}}
 \renewcommand{\headrulewidth}{0pt}
 
-% Define first page header
-% ------------------------
+%% Define first page header
+%% ------------------------
 \fancypagestyle{firstpage}
 {
   \fancyhf{}
   \cfoot{\fontsize{10pt}{0}\selectfont \thepage\ of \pageref{LastPage}}
 }
 
-% Sections customization
-% ----------------------
+%% Sections customization
+%% ----------------------
 \usepackage{titlesec}
 \titleformat{\section}
   {\sc\bfseries\Large\color{sectioncolor}}  % format
   {\thesection}  % label
-  {0.25cm}  % sep
+  {2.5mm}  % sep
   {}  % before-code
   [
-    \vspace{-0.5cm}%
+    \vspace{-5mm}%
     {\color{maincolor}\rule{\linewidth}{0.3pt}}
   ] % after-code
-\titlespacing{\section}{0cm}{0.5cm}{0.05cm}
+\titlespacing{\section}{0mm}{5mm}{0.5mm}
 
-% Define section indentation
-% --------------------------
+%% Define section indentation
+%% --------------------------
 \newenvironment{cvcontent}{
   \leftskip=0.5cm\rightskip=0cm
   \noindent\ignorespaces}{\par}
 
-% Metadata for the PDF output
-% ---------------------------
+%% Metadata for the PDF output
+%% ---------------------------
 \usepackage[colorlinks=true]{hyperref}
 \hypersetup{ % document metadata
   pdftitle  = {\MyName\ - \Title},
@@ -125,25 +125,25 @@
   urlcolor  = urlcolor,
 }
 
-% Useful macros
-% -------------
+%% Useful macros
+%% -------------
 \newcommand{\makefield}[2]{\makebox[1.5em]{\color{iconcolor}#1} #2}
 \newcommand{\mail}[1]{\href{mailto:#1}{\texttt{#1}}}
 %\newcommand{\DOI}[1]{doi:\href{https://dx.doi.org/#1}{#1}}
 %\newcommand{\invited}{\textbf{[invited]}}
 
 
-% ==================
-%   DOCUMENT START
-% ==================
+%%% ==================
+%%%   DOCUMENT START
+%%% ==================
 \begin{document}
 
-% No header for the first page
-% ----------------------------
+%% No header for the first page
+%% ----------------------------
 \thispagestyle{firstpage}
 
-%  HEADER
-% ========
+%%%  HEADER
+%%% ========
 \begin{center}
   {\fontsize{20pt}{0}\selectfont 
     \textbf{\textsc{\color{titlecolor} \MyName}}
@@ -166,53 +166,55 @@
   }
 \end{center}
 
-%  INTERESTS
-% ===========
+%%%  INTERESTS
+%%% ===========
 \input{interests}
 
-%  EDUCATION
-% ===========
+%%%  EDUCATION
+%%% ===========
 \input{education}
 
-%  EXPERIENCE
-% ============
+%%%  EXPERIENCE
+%%% ============
 \input{experience}
 
-%  AWARDS
-% ========
+%%%  AWARDS
+%%% ========
 \input{awards}
 
-%  CONFERENCES
-% =============
+%%%  CONFERENCES
+%%% =============
 \input{conferences}
 
-%  PUBLICATIONS
-% ==============
+\pagebreak   % <--- PAGE BREAK ! ! !
+
+%%%  PUBLICATIONS
+%%% ==============
 %\input{publications}
 
-%  SOFTWARE
-% ==========
+%%%  SOFTWARE
+%%% ==========
 \input{software}
 
-%  TEACHING
-% ==========
+%%%  TEACHING
+%%% ==========
 \input{teaching}
 
-%  DISSEMINATION
-% ===============
+%%%  DISSEMINATION
+%%% ===============
 \input{dissemination}
 
-%  COMMUNITY
-% ===========
+%%%  COMMUNITY
+%%% ===========
 \input{community}
 
 \begin{multicols}{2}
-%  TECHNICAL SKILLS
-% ==================
+%%%  TECHNICAL SKILLS
+%%% ==================
 \input{skills}
 
-%  LANGUAGES
-% ===========
+%%%  LANGUAGES
+%%% ===========
 \input{languages}
 \end{multicols}
 
