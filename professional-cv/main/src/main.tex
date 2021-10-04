@@ -64,6 +64,12 @@
   bubble fill opacity = 0.8,
 }
 
+% enable alternative underlining
+\usepackage{soul}
+
+% enable using special symbol
+\usepackage{textcomp}
+
 
 %-------------------------------------------------------------------------------
 %                            PERSONAL INFORMATION
@@ -104,20 +110,17 @@
 	% naming according to ISO 3166-1 alpha-2 country codes
 	\graphicspath{{professional-cv/img/flags/}}
 	
-	\vspace{0.5cm}
+	\vspace{0.25cm}
 	
     \profilesection{About Me}
 	\aboutme{
 		Ph.D. Student in Smart Computing at the University of Florence, I deal with Artificial Intelligence and its applications to Particle and Medical Physics. Passionate about innovation and scientific dissemination, I never refuse going out to discuss new ideas.
 	}
 	
-	\vspace{0.5cm}
+	\vspace{0.25cm}
 	
 	\profilesection{Memberships}
 	\begin{memberships}
-		\membership[4em]{professional-cv/main/img/AISF_logo.png}
-		{\href{http://ai-sf.it}{Associazione Italiana
-		                        \newline{Studenti di Fisica}}}\\
 		\membership[4em]{professional-cv/main/img/INFN_logo.png}
 		{\href{https://www.fi.infn.it}{Istituto Nazionale di
 		                               \newline{Fisica Nucleare}}}\\
@@ -125,11 +128,14 @@
 %    	{\href{https://home.cern}{Conseil Européen pour 
 %    	                          \newline{la Recherche Nucléaire}}}\\
 		\membership[4em]{professional-cv/main/img/LHCb_logo.jpg}
-		{\href{http://lhcb-public.web.cern.ch/lhcb-public/}{LHCb Collaboration}}
+		{\href{http://lhcb-public.web.cern.ch/lhcb-public/}{LHCb Collaboration}}\\
+		\membership[4em]{professional-cv/main/img/AISF_logo.png}
+		{\href{http://ai-sf.it}{Associazione Italiana
+		                        \newline{Studenti di Fisica}}}
 %		\membership[4em]{}{\rule{\linewidth}{1pt}}
 	\end{memberships}
 	
-	\vspace{0.5cm}
+	\vspace{0.25cm}
 	
 	% social network accounts incl. proper hyperlinks
 	\profilesection{Social Network}
@@ -155,7 +161,7 @@
 %-------------------------------------------------------------------------------
 \addtobacksidebar{
 
-	\vspace{0.75cm}
+	\vspace{0.25cm}
 
 	\profilesection{Soft Skills}
         \skill{\faSitemap}{Complex problem-solving}
@@ -164,7 +170,7 @@
  		\skill{\faSearchPlus}{Attention to detail, trustworthiness}
  		\skill{\faUsers}{Leadership and social influence}
 
-    \vspace{0.75cm}
+    \vspace{0.25cm}
 
 	\profilesection{Technical Skills}
 		\skill{\faLaptop}{\underline{Operating systems}}
@@ -174,11 +180,13 @@
 		\skill{\faTerminal}{\underline{Programming languages}}
 		    \pointskill[1.8em]{\faCode}{Python}{4}[5]
 		    \pointskill[1.8em]{\faCode}{C/C++}{2}[5]
-%		    \pointskill[1.8em]{\faCode}{LabVIEW}{2}[5]
-%		    \pointskill[1.8em]{\faCode}{Bash}{1}[5]
+		    \pointskill[1.8em]{\faCode}{HTML}{1}[5]
+		    \pointskill[1.8em]{\faCode}{Julia}{1}[5]
 		\skill{\faCubes}{\underline{Machine Learning frameworks}}
-		    \skill[1.8em]{\faCube}{Scikit-Learn}
 		    \skill[1.8em]{\faCube}{TensorFlow}
+		    \skill[1.8em]{\faCube}{Scikit-Learn}
+		    \skill[1.8em]{\faCube}{XGBoost}
+		    \skill[1.8em]{\faCube}{Optuna}
 		\skill{\faCogs}{\underline{Other suites}}
 		    \skill[1.8em]{\faCog}{Visual Studio Code}	
 		    \skill[1.8em]{\faCog}{Google Workspace}		 
@@ -186,7 +194,7 @@
 		    \skill[1.8em]{\faCog}{LaTeX}
 		    \skill[1.8em]{\faCog}{Git}
 
-    \vspace{0.75cm}
+    \vspace{0.25cm}
 
 	\profilesection{Languages}
 		\pointskill{\flag{professional-cv/main/img/flags/IT.png}}{Italian}{5}[5]
@@ -246,133 +254,240 @@
 
 \cvsubsection{Study}
 \begin{cvtable}[2]
-	\cvitem{2020 -- now}{\href{https://smartcomputing.unifi.it/}{Ph.D. in Smart Computing}}
-	{Università degli Studi di Firenze}
-		{\underline{Focus:} Multidisciplinary Ph.D. program aimed to provide expertise on advanced computational methods to meet the needs of society.\\
-		\underline{Topic:} Smart Computing Techniques applied to Medical Physics, Nuclear Physics and Particle Physics.}
-	\cvitem{2017 -- 2020}{Master's degree in Particle Physics}
-	{Università degli Studi di Firenze}
-		{\underline{Focus:} Curriculum of studies oriented to Physics Data Analysis with a strong focus on modern Computing Technologies, like Machine Learning and Artificial Intelligence.\\
-		\underline{Score:} $110/110$ \emph{cum laude}}
-	\cvitem{}{Master thesis}{Genève, Switzerland}
-		{\underline{Focus:} Development of a Python-based simulation framework for Particle Physics applications integrated with Deep Learning solutions to parameterize the detector response of the LHCb experiment.\\
-		\underline{Title:} ``Techniques for parametric simulation with deep neural networks and implementation for the LHCb experiment at CERN and its future upgrades''.}
-	\cvitem{2013 -- 2017}{Bachelor's degree in Physics}
-	{Università degli Studi di Firenze}
-		{\underline{Focus:} Standard course of study in Physics and Astrophysics during which I discovered a natural inclination towards Experimental Science and Data Analysis.\\
-		\underline{Score:} $110/110$}
-	\cvitem{}{Bachelor thesis}{Genève, Switzerland}
-		{\underline{Focus:} Data Analysis work in Particle Physics in collaboration with the 
-		 LHCb experiment at CERN.\\
-		 \underline{Title:} ``Study of the charmonium resonances in $B^+ \to p \bar{p} K^+$ 
-		 and $B^+ \to p \bar{p} \gamma K^+$ decays with the LHCb experiment at CERN''.}
-	\cvitem{2008 -- 2013}{Previous education}{Liceo Scientifico G. Galilei di Terni}
-		{\underline{Focus:} First general smattering on Scientific Approach and Critical Thinking thanks to which I decided to continue studies in Physics.\\
-		 \underline{Score:} $100/100$ \textit{cum laude}}
+    %
+	\cvitem{2020 -- now}{Ph.D. in Smart Computing}{University of 
+	Florence}{Exploration and development of Artificial Intelligence 
+	strategies applied to Medical Physics, Nuclear Physics and Particle 
+	Physics.}
+    %
+	\cvitem{2017 -- 2020}{M.Sc. in Particle Physics}{University 
+	of Florence}{Curriculum of studies oriented to  Data Analysis with 
+	a strong focus on Artificial Intelligence techniques.\\
+	\ul{Score:} $110/110$ \emph{cum laude}}
+	%
+	\cvitem{}{Master thesis}{}{Development of a Python framework for 
+	Particle Physics simulation based on Deep Learning models.\\
+	\ul{Title:} ``Techniques for parametric simulation with deep neural 
+	networks and implementation for the LHCb experiment at CERN and its 
+	future upgrades''.}
+	%
+	\cvitem{2013 -- 2017}{B.Sc. in Physics and Astrophysics}{University 
+	of Florence}{Basic training in Physics where I	discovered a natural
+	inclination towards Experimental Physics and Data Analysis.\\
+	\ul{Score:} $110/110$}
+	%
+	\cvitem{}{Bachelor thesis}{}{Data Analysis work in Particle Physics 
+	in collaboration with the LHCb experiment at CERN.\\
+	\ul{Title:} ``Study of the charmonium resonances in $B^+ \to p \bar{p} K^+$
+	and $B^+ \to p \bar{p} \gamma K^+$ decays with the LHCb experiment at CERN''.}
+	%
+%	\cvitem{2008 -- 2013}{Previous education}{Liceo Scientifico G. Galilei 
+%	di Terni}{First general smattering on Scientific Approach and Critical
+%	Thinking thanks to which I decided to continue studies in Physics.\\
+%	\ul{Score:} $100/100$ \textit{cum laude}}
+	%
 \end{cvtable}
 
-\vskip 2.5mm
-
+%%%%%  Other course
+%%%%% --------------
 \cvsubsection{Other courses}
 \begin{cvtable}[2]
-	\cvitem{2018 -- 2019}{\href{https://www.unifi.it/impresacampus}{Impresa Campus Unifi}}{Università degli Studi di Firenze}
-		{\underline{Focus:} Development of innovative ideas and business culture in university context   with Team Building path and personal expert support.}
-	\cvitem{2018}{\href{https://www.unifi.it/vp-8678-palestra-di-intraprendenza.html}{Palestra di Intrapredenza}}{Università degli Studi di Firenze}
-		{\underline{Focus:} Evaluation of personal motivation and entrepreneurial propensity thanks to Design Thinking and LEGO Serious Play\textsuperscript{\textregistered} methods.}
+    %
+	\cvitem{2018 -- 2019}{Impresa Campus Unifi}{University of Florence}
+	{Development of innovative ideas and business culture in university 
+	context   with Team Building path and personal expert support.}
+	%
+	\cvitem{2018}{Palestra di Intrapredenza}{University of Florence}
+	{Evaluation of personal motivation and entrepreneurial propensity 
+	thanks to Design Thinking and LEGO Serious Play\textsuperscript{\textregistered} methods.}
+	%
 \end{cvtable}
 
-\vskip 5mm
 
+%%%  EXPERIENCE
+%%% ============
 \cvsection{Experience}
-\cvsubsection{Tutoring}
+
+%%%%%  Research
+%%%%% ----------
+\cvsubsection{Research}
 \begin{cvtable}[2]
-	\cvitem{2018 -- now}{Teaching assistant}{Università degli Studi di Firenze}
-	    {Support to laboratory activities for the BSc degree course in Physics. Since October 2020, I am responsible for brief lessons of Python for the third year students.}
-%	\cvitem{2018}{Student assistant}{Università degli Studi di Firenze}
-%	    {Welcome and orientation service for science students.}
-	\cvitem{2016 -- now}{Maths and Physics Reps Teacher}{}
-	    {Private lessons for high-school and university students.}
+    %
+    \cvitem{2021 -- now}{Graduate Researcher}{University of Florence, 
+    Firenze (IT)}{Research focused on development and deployment of 
+    Machine Learning models for the Ultra-Fast Simulation of the LHCb
+    experiment.}
+    %
+    \cvitem{2020}{Student Researcher}{INFN-Florence, Firenze (IT)}
+    {Traineeship focused on application of Artificial Intelligence 
+    techniques to High Energy Physics.}
+    %
+    \cvitem{2019}{Research Intern}{CERN, Geneva (CH)}{Research focused 
+    on development of Deep Learning models to parameterize the LHCb 
+    particle identification system.}
+    %
+\end{cvtable}
+
+%%%%%  Teaching
+%%%%% ----------
+\cvsubsection{Teaching}
+\begin{cvtable}[2]
+    %
+	\cvitem{2020 -- now}{Teaching Assistant}{University of Florence, 
+	Firenze (IT)}{Responsible for introductory lessons to Python for 
+	third year students of the B.Sc. in Physics of the University of 
+	Florence.}
+	%
+	\cvitem{2018 -- now}{Laboratory Tutor}{University of Florence, 
+	Firenze (IT)}{Support to Physics Laboratory activities for the 
+	B.Sc. in Biological Sciences, Mathematics and Physics of the 
+	University of Florence.}
+	%
+%	\cvitem{2018}{Student assistant}{University of Florence}{Welcome 
+%	and orientation service for science students.}
+    %
+%	\cvitem{2016 -- now}{Maths and Physics Reps Teacher}{}{Private 
+%   lessons for high-school and university students.}
+    %
 \end{cvtable}
 
 \newpage
 \makebacksidebar
 
-\cvsubsection{Italian Association of Physics Student (AISF)}
+%%%%%  AISF
+%%%%% ------
+\cvsubsection{Italian Association of Physics Student}
 \begin{cvtable}[2]
-    \cvitem{2020 -- now}{Vice President}{}
-	    {Support to Association organization.}
-	\cvitem{2019 -- now}{Secretary}{}
-	    {Member of the Executive Committee that organizes and coordinates the Italian Local Committees.}
-	\cvitem{2018 -- 2019}{President of the Florence Local Committee}{}
-	    {Organization of events and representative for about 40 members.}
-	\cvitem{2018 -- now}{Member of the Editorial Board of \textit{Sistemi di Riferimento}}{}
-	    {Vulgarization activity to valorise Italian Physics Departments.}
-	\cvitem{2017 -- 2018}{Vice President of the Florence Local Committee}{}
-	    {Support to events organization and Local Committee coordination.}
+    %
+%    \cvitem{2020 -- now}{Deputy-President}{}{}
+    %
+	\cvitem{2019 -- now}{Secretary}{}{Member of the Executive 
+	Committee that manages and coordinates events and activities 
+	together with the national Local Committees.}
+	%
+	\cvitem{2018 -- 2019}{President of the Florence Local 
+	Committee}{}{Organization of outreach events and representative 
+	role for about 40 members from the University of Florence.}
+	%
+	\cvitem{2018 -- now}{Member of the Editorial Board of 
+	\textit{Sistemi di Riferimento}}{}{Scientific dissemination 
+	with articles and live interviews to promote the research 
+	activity of Italian Physics Departments.}
+	%
+%	\cvitem{2017 -- 2018}{Deputy-President of the Florence 
+%	Local Committee}{}{Support to events organization and 
+%	Local Committee coordination.}
+	%
 \end{cvtable}
 
-%\newpage
-%\makebacksidebar
-
+%%%%%  Other experiences
+%%%%% -------------------
 %\cvsubsection{Other experiences}
 %\begin{cvtable}[2]
-%	\cvitem{2016}{Science Library assistant}{Università degli Studi di Firenze}
-%	    {Support to science library workers and book arrangement.}
-%	\cvitem{2011 -- 2013}{Basketball officer}{Federazione Italiana Pallacanestro}
-%	    {Referee assistant during basketball matches.}
+%    %
+%	\cvitem{2016}{Science Library assistant}{University of Florence,
+%    Firenze (IT)}{Support to science library workers and book 
+%    arrangement.}
+%    %
+%	\cvitem{2011 -- 2013}{Basketball officer}{Federazione Italiana 
+%    Pallacanestro, Terni (IT)}{Referee assistant during basketball 
+%    matches.}
+%    %
 %\end{cvtable}
 
 
+%%%  CONFERENCES
+%%% =============
 \cvsection{Conferences, Workshops and Schools}
 \begin{cvtable}[2]
-    \cvitem{2021}{\href{https://indico.cern.ch/event/1017080/}{8th Thematic CERN School of Computing}}{online}
-        {\underline{Focus:} Scientific software for heterogeneous architectures.}
-%    \cvitem{2021}{\href{https://agenda.infn.it/event/25855/}{First ML-INFN Hackathon}}{online}
- %       {\underline{Focus:} Introduction to Machine Learning topics interesting for INFN (use-case selected: Medical Physics).}
-    \cvitem{2021}{\href{https://agenda.infn.it/event/25889/}{Workshop della Commissione Calcolo e Reti dell'INFN}}{online}
-        {Participation with a presentation titled ``Simulating the LHCb detector with Generative Adversarial Networks''.}
-    \cvitem{2021}{1st CloudBank EU Workshop}{online}
-        {Participation with a presentation titled ``LHCb deployment in AWS''.}
-    \cvitem{2020}{\href{https://site.unibo.it/school-physical-sensing-and-processing/en}{Summer School in Physical Sensing and Processing}}{online}
-	    {\underline{Focus:} Sensing devices, DAQ systems and data processing strategies across various Physics subdomains.}
-	\cvitem{2019}{\href{http://www.diitet.cnr.it/workshop-artificial-intelligence-in-health-and-well-being/}{Artificial Intelligence in Health and Well-Being}}{Firenze, Italy}
-	    {\underline{Focus:} Artificial Intelligence applied to health and well-being.}
-%	\cvitem{2019}{\href{http://ai-sf.it/cisf19/}{Italian Conference of Physics Students 2019}}{Milano, Italy}
-%	    {Participation with a workshop titled ``\textit{Dietro l'Articolo SdR}''.}
-%	\cvitem{2018}{\href{http://ai-sf.it/cisf18/}{Italian Conference of Physics Students 2018}}{Pisa, Italy}
-%	    {Representative for the Florence Local Committee.}
-%	\cvitem{2017}{\href{http://www.ai-sf.it/cisf2017/}{Italian Conference of Physics Students 2017}}{Bari, Italy}
-%	    {Participation with a poster titled ``\textit{I ragazzi di via Panisperna}''.}
+    %
+    \cvitem{2021}{107\textdegree\ Congresso Nazionale della SIF}
+    {online}{\ul{Presentation:} ``Simulating the LHCb detector 
+    with GANs''.}
+    %
+    \cvitem{2021}{8th Thematic CERN School of Computing}{online}
+    {\ul{Theme:} Scientific software for heterogeneous 
+    architectures.}
+    %
+%    \cvitem{2021}{First ML-INFN Hackathon}{online}{\ul{Theme:} 
+%    Introduction to Machine Learning topics interesting for INFN 
+%    (use-case selected: Medical Physics).}
+    %
+    \cvitem{2021}{Workshop della Commissione Calcolo e Reti dell'INFN}
+    {online}{\ul{Presentation:} ``Simulating the LHCb detector with GANs''.}
+    %
+    \cvitem{2021}{1st CloudBank EU Workshop}{online}{\ul{Presentation:} 
+    ``LHCb deployment in AWS''.}
+    %
+    \cvitem{2020}{2nd Summer School in Physical Sensing and Processing}
+    {online}{\ul{Theme:} Sensing devices, DAQ systems and data processing.}
+    %
+%	\cvitem{2019}{Artificial Intelligence in Health and Well-Being}
+%	{Firenze (IT)}{\ul{Theme:} Artificial Intelligence applied to health 
+%	and well-being.}
+	%
+%	\cvitem{2019}{Italian Conference of Physics Students 2019}
+%	{Milano (IT)}{Participation with a workshop titled ``\textit{Dietro 
+%	l'Articolo SdR}''.}
+	%
+%	\cvitem{2018}{Italian Conference of Physics Students 2018}{Pisa
+%	(IT)}{Representative for the Florence Local Committee.}
+	%
+%	\cvitem{2017}{Italian Conference of Physics Students 2017}{Bari
+%	(IT)}{Participation with a poster titled ``\textit{I ragazzi di 
+%	via Panisperna}''.}
+    %
 \end{cvtable}
 
 
+%%%  OUTREACH
+%%% ==========
 \cvsection{Outreach and Dissemination}
 \begin{cvtable}[2]
-    \cvitem{2021}{Book author}{Sassi Junior}
-        {On behalf of the INFN, I have prepared a paragraph dedicated to Artificial Intelligence for ``Inventions'', a science book for kids.}
-	\cvitem{2018}{Jury member}{Premio Galileo}
-	    {\textit{Premio Galileo} is a literary prize for science communication.}
-	\cvitem{2017 -- 2018}{Blog author}{Fisici Senza Palestra}
-	    {Dissemination of science on \href{https://www.fisicisenzapalestra.com}{\textit{Fisici Senza Palestra}} blog.}
+    %
+    \cvitem{2021}{Book author}{Sassi Junior}{On behalf of the INFN, 
+    I have prepared a paragraph dedicated to Artificial Intelligence 
+    for ``Inventions'', a science book for kids.}
+    %
+	\cvitem{2018}{Jury member}{Premio Galileo}{``Premio Galileo'' is 
+	a literary prize for science communication.}
+	%
+	\cvitem{2017 -- 2018}{Blog author}{Fisici Senza Palestra}{Dissemination 
+	of science on ``Fisici Senza Palestra'' blog.}
+	%
 \end{cvtable}
 
 
+%%%  AWARDS
+%%% ========
 \cvsection{Awards}
 \begin{cvtable}[2]
-	\cvitem{2019}{INFN scolarship}{Istituto Nazionale di Fisica Nucleare}
-	    {Scholarship funded by the National Institute for Nuclear Physics (INFN) for spending three months at CERN.}
-	\cvitem{2017}{Scholarship for thesis abroad}{Università degli Studi di Firenze}
-	    {Sholarship funded by the University of Florence for spending a part of the bachelor thesis work at CERN.}
-	\cvitem{2013}{Scholar merit award}{Liceo Scientifico G. Galilei di Terni}
-	    {Merit award for the excellence of high-school career.}
+    %
+    \cvitem{2020 -- 2023}{Ph.D. Scholarship in Smart Computing}{INFN}
+    {Scholarship to carry out Artificial Intelligence techniques for 
+    High Energy Physics applications}
+    %
+	\cvitem{2019}{Scholarship for research activity}{INFN}{National grant to pass three months at CERN for research activity.}
+	%
+	\cvitem{2017}{Scholarship for thesis abroad}{University of Florence}
+	{Local grant to pass ten days at CERN for bachelor thesis.}
+	%
+%	\cvitem{2013}{Scholar merit award}{Liceo Scientifico G. Galilei di Terni}
+%	{Merit award for the excellence of high-school career.}
+	%
 \end{cvtable}
 
 
+%%%  PUBLICATIONS
+%%% ==============
 %\cvsection{Publications}
 %\begin{cvtable}
-%	\cvpubitem{Cooking: 100 recipes for lazy Pandas}{Me and My Panda Friends}
-%		{Panda's Culinary World}{2010}
+    %
+%	\cvpubitem{Cooking: 100 recipes for lazy Pandas}{Me and My Panda 
+%    Friends}{Panda's Culinary World}{2010}
+    %
 %	\cvpubitem{Pandastasia}{Still Me}{Bamboo Books Assoc.}{2005}
+    %
 %\end{cvtable}
 
 
