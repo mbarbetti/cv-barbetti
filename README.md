@@ -1,4 +1,5 @@
-[![made-with-latex](https://img.shields.io/badge/Made%20with-LaTeX-1f425f.svg)](https://www.latex-project.org/)
+[![made-with-latex](https://img.shields.io/badge/Made%20with-LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white)](https://www.latex-project.org/)
+[![made-with-latex](https://img.shields.io/badge/Developed%20in-Overleaf-47a141?style=for-the-badge&logo=overleaf&logoColor=white)](https://it.overleaf.com/)
 
 # Curriculum Vitae
 [👓 Matteo Barbetti](https://mbarbetti.github.io/) | Ph.D. student in Smart Computing | University of Florence, INFN-Firenze
