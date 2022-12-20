@@ -1,0 +1,219 @@
+\documentclass[a4paper, 11pt]{article}
+
+%% ID information
+%% --------------
+\newcommand{\Title}{Curriculum Vitae}
+\newcommand{\FirstName}{Matteo}
+\newcommand{\LastName}{Barbetti}
+\newcommand{\Initials}{M}
+\newcommand{\MyName}{\FirstName\ \LastName}
+\newcommand{\MyRole}{Ph.D. student in Smart Computing}
+\newcommand{\Me}{\textbf{\LastName, \Initials.}}  % for citations
+\newcommand{\Email}{matteo.barbetti@unifi.it}
+\newcommand{\Website}{https://mbarbetti.github.io}
+\newcommand{\GitHubAccount}{mbarbetti}
+\newcommand{\Phone}{+39\,347\,8595002}
+\newcommand{\Affiliation}{
+  Department of Physics and Astronomy, University of Florence
+}
+\newcommand{\Address}{
+  Room 183, Via Sansone 1, 50019 Sesto Fiorentino (FI), Italy
+}
+
+%% Define font typeface
+%% --------------------
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+
+%% Control the font size
+%% ---------------------
+\usepackage{anyfontsize}
+
+%% Define new date format
+%% ----------------------
+\usepackage{datetime}
+\newdateformat{monthyear}{\monthname[\THEMONTH], \THEYEAR}
+
+%% Set the page margins
+%% --------------------
+\usepackage[left=1.5cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+%% Remove space between items
+%% --------------------------
+\usepackage[inline]{enumitem}
+
+%% Use custom colors
+%% -----------------
+\usepackage[usenames,dvipsnames]{xcolor}
+\definecolor{maincolor}{HTML}{000000}
+\definecolor{titlecolor}{HTML}{000000}
+\definecolor{sectioncolor}{HTML}{990000}
+\definecolor{iconcolor}{HTML}{990000}
+\definecolor{urlcolor}{HTML}{990000}
+\definecolor{hlcolor-0}{HTML}{000000}
+\definecolor{hlcolor-1}{HTML}{666666}
+\definecolor{hlcolor-2}{HTML}{990000}
+
+%% Enable using special symbols
+%% ------------------------------
+\usepackage{fontawesome5}
+\usepackage{textcomp}
+
+% Enable alternative underlining
+% ------------------------------
+\usepackage{soul}
+
+%% Enable multiple columns
+%% -----------------------
+\usepackage{multicol}
+
+%% Set fancy headers
+%% -----------------
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\chead{
+  \fontsize{10pt}{12pt}\selectfont
+  \MyName
+  \hfill
+  \url{\Website}
+  \hfill
+  Last updated: \monthyear\today
+}
+\rhead{}
+\cfoot{\fontsize{10pt}{0}\selectfont \thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+
+%% Define first page header
+%% ------------------------
+\fancypagestyle{firstpage}
+{
+  \fancyhf{}
+  \cfoot{\fontsize{10pt}{0}\selectfont \thepage\ of \pageref{LastPage}}
+}
+
+%% Sections customization
+%% ----------------------
+\usepackage{titlesec}
+\titleformat{\section}
+  {\sc\bfseries\Large\color{sectioncolor}}  % format
+  {\thesection}  % label
+  {2.5mm}  % sep
+  {}  % before-code
+  [
+    \vspace{-5mm}%
+    {\color{maincolor}\rule{\linewidth}{0.3pt}}
+  ] % after-code
+\titlespacing{\section}{0mm}{5mm}{0.5mm}
+
+%% Define section indentation
+%% --------------------------
+\newenvironment{cvcontent}{
+  \leftskip=0.5cm\rightskip=0cm
+  \noindent\ignorespaces}{\par}
+
+%% Metadata for the PDF output
+%% ---------------------------
+\usepackage[colorlinks=true]{hyperref}
+\hypersetup{ % document metadata
+  pdftitle  = {\MyName\ - \Title},
+  pdfauthor = {\MyName},
+  linkcolor = black,
+  citecolor = black,
+  filecolor = black,
+  urlcolor  = urlcolor,
+}
+
+%% Useful macros
+%% -------------
+\newcommand{\makefield}[2]{\makebox[1.5em]{\color{iconcolor}#1} #2}
+\newcommand{\mail}[1]{\href{mailto:#1}{\texttt{#1}}}
+%\newcommand{\DOI}[1]{doi:\href{https://dx.doi.org/#1}{#1}}
+%\newcommand{\invited}{\textbf{[invited]}}
+
+
+%%% ==================
+%%%   DOCUMENT START
+%%% ==================
+\begin{document}
+
+%% No header for the first page
+%% ----------------------------
+\thispagestyle{firstpage}
+
+%%%  HEADER
+%%% ========
+\begin{center}
+  {\fontsize{20pt}{0}\selectfont 
+    \textbf{\textsc{\color{titlecolor} \MyName}}
+  }
+  \\[0.4cm]
+  {\fontsize{14pt}{0}\selectfont 
+    {\color{maincolor} \MyRole}
+  }
+  \\[0.3cm]
+  {\fontsize{10pt}{0}\selectfont
+    {\color{maincolor}
+      \Affiliation
+      \\[0.2cm]
+      \Address
+      \\[0.3cm]
+      \makefield{\faEnvelope}{\mail{\Email}}
+      \, | \,
+      \makefield{\faGlobe}{\url{\Website}}
+    }
+  }
+\end{center}
+
+%%%  INTERESTS
+%%% ===========
+\input{interests}
+
+%%%  EDUCATION
+%%% ===========
+\input{education}
+
+%%%  EXPERIENCE
+%%% ============
+\input{experience}
+
+%%%  AWARDS
+%%% ========
+\input{awards}
+
+%%%  CONFERENCES
+%%% =============
+\input{conferences}
+
+%%%  SOFTWARE
+%%% ==========
+\input{software}
+
+%%%  PUBLICATIONS
+%%% ==============
+\input{publications}
+
+%%%  TEACHING
+%%% ==========
+\input{teaching}
+
+%%%  DISSEMINATION
+%%% ===============
+\input{dissemination}
+
+%%%  COMMUNITY
+%%% ===========
+\input{community}
+
+\begin{multicols}{2}
+%%%  TECHNICAL SKILLS
+%%% ==================
+\input{skills}
+
+%%%  LANGUAGES
+%%% ===========
+\input{languages}
+\end{multicols}
+
+\end{document}
