@@ -5,11 +5,22 @@
   {\small \color{hlcolor-1} 
   {\color{iconcolor} \faGraduationCap}
   \textsc{#1} \hfill {#2}}
-  
+
+\newcommand{\scholarship}[1]
+  {\normalsize \color{maincolor} {#1}}
+
+\newcommand{\activity}[1]
+  {\normalsize \color{maincolor} 
+    \ul{Main activities carried out:}\\ [1.5mm]
+    \begin{itemize*}[label=\textcolor{iconcolor}{\textbullet}]
+      {#1}
+    \end{itemize*}
+  }
+
 \newcommand{\worktitle}[2]
   {\normalsize \color{maincolor}
     \ul{#1:}
-    \begin{minipage}[t]{0.75\linewidth}
+    \begin{minipage}[t]{0.85\linewidth}
       \begin{flushleft}
         \emph{#2}
       \end{flushleft}
@@ -21,30 +32,40 @@
   %%%
   %%%  PHD : SMART COMPUTING
   %%% =======================
-  \university{University of Florence}{Firenze, Italy}\\
-  \degree{Ph.D. in Smart Computing}{Nov 2020 -- present}\\ [1mm]
-  \worktitle{Topic}{Smart Computing Techniques applied to Medical
-  Physics, Nuclear Physics and Particle Physics}\\ [1.5mm]
-  \ul{Advisors:} Lucio Anderlini, Denis Derkach, Michael Williams 
-  \\ [4mm]
+  \university{University of Florence}{Firenze, Italy}\\ [0.5mm]
+  \degree{Ph.D. in Smart Computing}{Nov 2020 -- present}\\ [1.5mm]
+  \scholarship{Ph.D. scholarship funded by INFN to carry out Machine Learning research for Physics applications}\\ [1.5mm]
+  \activity{
+    \item \emph{Software development for Lamarr, the LHCb ultra-fast simulation framework}\\ [0.5mm]
+    \item \emph{Cloud applications development to coordinate Bayesian optimization studies}\\ [0.5mm]
+    \item \emph{Contribution to the LHCb distributed computing operations}\\ [0.5mm]
+    \item \emph{Application of Machine Learning techniques to Medical Physics}}\\ [1.5mm]
+  \ul{Advisory Board:} Lucio Anderlini, Denis Derkach, Michael Williams 
+  \\ [5mm]
   %%%
   %%%  MSC : PARTICLE PHYSICS
   %%% ========================
-  \university{University of Florence}{Firenze, Italy}\\
-  \degree{M.Sc. in Particle Physics}{Sep 2017 -- Jun 2020}\\ [1mm]
-  \worktitle{Thesis}{``Techniques for parametric simulation with deep neural networks and implementation for the LHCb experiment at CERN
-  and its future upgrades''}\\ [1.5mm]
-  \ul{Thesis Advisors:} Lucio Anderlini, Piergiulio Lenzi\\ [0.5mm]
+  \university{University of Florence}{Firenze, Italy}\\ [0.5mm]
+  \degree{M.Sc. in Particle Physics}{Sep 2017 -- Jun 2020}\\ [1.5mm]
+  \worktitle{Thesis Title}{``Techniques for parametric simulation with
+    deep neural networks and implementation for the LHCb experiment at 
+    CERN and its future upgrades''
+    \rm{(\href{https://cds.cern.ch/record/2826210}{CERN-THESIS-2020-416})}
+    }\\ [1.5mm]
+  \ul{Thesis Advisors:} Lucio Anderlini, Piergiulio Lenzi\\ [1.5mm]
+  \ul{Thesis Award:} ``Giulia Vita Finzi'' INFN award for the best thesis on computing and networks\\ [1.5mm]
   \ul{Graduation Score:} 110/110 \emph{cum laude}
-  \\ [4mm]
+  \\ [5mm]
   %%%
   %%%  BSC : PHYSICS & ASTROPHYSICS
   %%% ==============================
-  \university{University of Florence}{Firenze, Italy}\\
-  \degree{B.Sc. in Physics and Astrophysics}{Sep 2013 -- Sep 2017}\\ [1mm]
-  \worktitle{Thesis}{``Study of the charmonium resonances in 
-      $B^+ \to p \bar{p} K^+$ and $B^+ \to p \bar{p} \gamma K^+$
-      decays with the LHCb experiment at CERN''}\\ [1.5mm]
-  \ul{Thesis Advisors:} Lucio Anderlini, Giuseppe Latino\\ [0.5mm]
+  \university{University of Florence}{Firenze, Italy}\\ [0.5mm]
+  \degree{B.Sc. in Physics and Astrophysics}{Sep 2013 -- Sep 2017}\\ [1.5mm]
+  \worktitle{Thesis Title}{``Study of the charmonium resonances in 
+    $B^+ \to p \bar{p} K^+$ and $B^+ \to p \bar{p} \gamma K^+$
+    decays with the LHCb experiment at CERN'' 
+    \rm{(\href{https://cds.cern.ch/record/2826211}{CERN-THESIS-2017-496})}
+    }\\ [1.5mm]
+  \ul{Thesis Advisors:} Lucio Anderlini, Giuseppe Latino\\ [1.5mm]
   \ul{Graduation Score:} 110/110
 \end{cvcontent}
