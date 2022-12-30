@@ -1,55 +1,276 @@
-\newcommand{\journal}[1]
-  {\textbf{\large #1}\\\vspace{-5mm}}
+\documentclass[a4paper, 11pt]{article}
 
-\newcommand{\arxiv}[1]
-  {\href{https://arxiv.org/abs/#1}{\texttt{arXiv:#1}}}
+%% ID information
+%% --------------
+\newcommand{\Title}{Publications}
+\newcommand{\FirstName}{Matteo}
+\newcommand{\LastName}{Barbetti}
+\newcommand{\Initials}{M}
+\newcommand{\MyName}{\FirstName\ \LastName}
+\newcommand{\MyRole}{Ph.D. student in Smart Computing}
+\newcommand{\Me}{\textbf{\LastName, \Initials.}}  % for citations
+\newcommand{\Email}{matteo.barbetti@unifi.it}
+\newcommand{\Website}{https://mbarbetti.github.io}
+\newcommand{\GitHubAccount}{mbarbetti}
+\newcommand{\Phone}{+39\,347\,8595002}
+\newcommand{\Affiliation}{
+  Department of Physics and Astronomy, University of Florence
+}
+\newcommand{\Address}{
+  Room 183, Via Sansone 1, 50019 Sesto Fiorentino (FI), Italy
+}
+
+%% Define font typeface
+%% --------------------
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+
+%% Control the font size
+%% ---------------------
+\usepackage{anyfontsize}
+
+%% Define new date format
+%% ----------------------
+\usepackage{datetime}
+\newdateformat{monthyear}{\monthname[\THEMONTH], \THEYEAR}
+
+%% Set the page margins
+%% --------------------
+\usepackage[left=1.5cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+%% Remove space between items
+%% --------------------------
+\usepackage[inline]{enumitem}
+
+%% Use custom colors
+%% -----------------
+\usepackage[usenames,dvipsnames]{xcolor}
+\definecolor{maincolor}{HTML}{000000}
+\definecolor{titlecolor}{HTML}{000000}
+\definecolor{sectioncolor}{HTML}{16679a}
+\definecolor{iconcolor}{HTML}{0f80aa}
+\definecolor{urlcolor}{HTML}{0f80aa}
+\definecolor{hlcolor-0}{HTML}{000000}
+\definecolor{hlcolor-1}{HTML}{666666}
+\definecolor{hlcolor-2}{HTML}{16679a}
+
+%% Enable using special symbols
+%% ------------------------------
+\usepackage{fontawesome5}
+\usepackage{textcomp}
+
+% Enable alternative underlining
+% ------------------------------
+\usepackage{soul}
+
+%% Enable multiple columns
+%% -----------------------
+\usepackage{multicol}
+
+%% Set fancy headers
+%% -----------------
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\chead{
+  \fontsize{10pt}{12pt}\selectfont
+  \MyName
+  \hfill
+  \url{\Website}
+  \hfill
+  Last updated: \monthyear\today
+}
+\rhead{}
+\cfoot{\fontsize{10pt}{0}\selectfont \thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+
+%% Define first page header
+%% ------------------------
+\fancypagestyle{firstpage}
+{
+  \fancyhf{}
+  \cfoot{\fontsize{10pt}{0}\selectfont \thepage\ of \pageref{LastPage}}
+}
+
+%% Sections customization
+%% ----------------------
+\usepackage{titlesec}
+\titleformat{\section}
+  {\sc\bfseries\Large\color{sectioncolor}}  % format
+  {\thesection}  % label
+  {2.5mm}  % sep
+  {}  % before-code
+  [
+    \vspace{-5mm}%
+    {\color{maincolor}\rule{\linewidth}{0.3pt}}
+  ] % after-code
+\titlespacing{\section}{0mm}{5mm}{0.5mm}
+
+%% Define section indentation
+%% --------------------------
+\newenvironment{cvcontent}{
+  \leftskip=0.5cm\rightskip=0cm
+  \noindent\ignorespaces}{\par}
+
+%% Metadata for the PDF output
+%% ---------------------------
+\usepackage[colorlinks=true]{hyperref}
+\hypersetup{ % document metadata
+  pdftitle  = {\MyName\ - \Title},
+  pdfauthor = {\MyName},
+  linkcolor = black,
+  citecolor = black,
+  filecolor = black,
+  urlcolor  = urlcolor,
+}
+
+%% Useful macros
+%% -------------
+\newcommand{\makefield}[2]{\makebox[1.5em]{\color{iconcolor}#1} #2}
+\newcommand{\mail}[1]{\href{mailto:#1}{\texttt{#1}}}
+%\newcommand{\DOI}[1]{doi:\href{https://dx.doi.org/#1}{#1}}
+%\newcommand{\invited}{\textbf{[invited]}}
+
+%% Custom commands
+%% ---------------
+\newcommand{\journal}[1]{\textbf{\large #1}\\\vspace{-4mm}}
+\newcommand{\arxiv}[1]{\href{https://arxiv.org/abs/#1}{\texttt{arXiv:#1}}}
 
 
+%%% ==================
+%%%   DOCUMENT START
+%%% ==================
+\begin{document}
+
+%% No header for the first page
+%% ----------------------------
+\thispagestyle{firstpage}
+
+%%%  HEADER
+%%% ========
+\begin{center}
+  {\fontsize{20pt}{0}\selectfont 
+    \textbf{\textsc{\color{titlecolor} \MyName}}
+  }
+  \\[0.4cm]
+  {\fontsize{10pt}{0}\selectfont
+    {\color{maincolor}
+      \Affiliation
+      \\[0.2cm]
+      \Address
+      \\[0.3cm]
+      \makefield{\faEnvelope}{\mail{\Email}}
+      \, | \,
+      \makefield{\faGlobe}{\url{\Website}}
+    }
+  }
+\end{center}
+
+\vspace{2.5mm}
+
+%%%  PUBLICATIONS
+%%% ==============
 \section*{Publications}
 \begin{cvcontent}
-  \emph{Papers reported in reverse chronological order}\\[3mm]
-  %%%
-  %%%  Selected papers
-  %%% =================
- \journal{Selected Papers}
- \begin{enumerate}[label={[\arabic*]}, leftmargin=1.5cm]
-    %
-    \item L. Anderlini \emph{et al.},
-    \emph{Lamarr: the ultra-fast simulation option for the LHCb experiment},
-    in \emph{41st International Conference on High Energy Physics -- PoS(ICHEP2022)},
-    \href{https://doi.org/10.22323/1.414.0233}{\textbf{414} 233}, in preparation
-    %
-    \item E. M. Abenavoli \emph{et al.},
-    \emph{Characterization of mediastinal bulky lymphomas with FDG-PET-based radiomics and machine learning techniques},
-    submitted to \href{https://www.tandfonline.com/toc/ilal20/current}{Leukemia and Lymphoma}
-    %
-    \item F. Ratnikov \emph{et al.},
-    \emph{A full detector description using neural network driven simulation},
-    in \emph{15th Pisa Meeting on Advanced Detectors},
-    \href{https://doi.org/10.1016/j.nima.2022.167591}{Nucl. Instrum. Meth. A \textbf{1046} (2022) 167591}
-    %
-    \newpage\noindent
-    %
-    \item L. Anderlini and M. Barbetti, 
-    \emph{scikinC: a tool for deploying machine learning as binaries}, 
-    in \emph{Computational Tools for High Energy Physics and Cosmology -- PoS(CompTools2021)}, 
-    \href{https://doi.org/10.22323/1.409.0034}{\textbf{409} 034, 2022}
-    %
-    \item L. Anderlini \emph{et al.},
-    \emph{Towards Reliable Neural Generative Modeling of Detectors},
-    in \emph{20th International Workshop on Advanced Computing and Analysis Techniques in Physics Research},
-    \arxiv{2204.09947}
-    %
- \end{enumerate}
+  \emph{Papers reported in reverse chronological order}\\[4mm]
   %%%
   %%%  Preprints
   %%% ===========
   \journal{Preprints \& Working Papers}
   \begin{enumerate}[label={[\arabic*]}, leftmargin=1.5cm]
     %
+    \item M. Barbetti and L. Anderlini,
+    \emph{Hyperparameter Optimization as a Service on INFN Cloud},
+    in \emph{21st International Workshop on Advanced Computing and Analysis Techniques in Physics Research},
+    in preparation for \href{https://iopscience.iop.org/journal/1742-6596}{J. Phys. Conf.}
+    %
+    \item L. Anderlini \emph{et al.},
+    \emph{Lamarr: LHCb ultra-fast simulation based on machine learning models},
+    in \emph{21st International Workshop on Advanced Computing and Analysis Techniques in Physics Research},
+    in preparation for \href{https://iopscience.iop.org/journal/1742-6596}{J. Phys. Conf.}
+    %
     \item E. M. Abenavoli \emph{et al.},
     \emph{Characterization of mediastinal bulky lymphomas with FDG-PET-based radiomics and machine learning techniques},
-    submitted to \href{https://www.tandfonline.com/toc/ilal20/current}{Leukemia and Lymphoma}
+    in preparation for \href{https://www.mdpi.com/journal/cancers}{Cancers}
+    %
+    \sloppy
+    \item LHCb Collaboration,
+    \emph{Measurement of $\Upsilon$ production in $pp$ collisions at $\sqrt{s}=5~\rm{TeV}$},
+    \arxiv{2212.12664}
+    %
+    \item LHCb Collaboration,
+    \emph{First observation and branching fraction measurement of the $\Lambda_b^0\to D_s^- p$ decay},
+    \arxiv{2212.12574}
+    %
+    \item LHCb Collaboration,
+    \emph{Search for rare decays of $D^0$ mesons into two muons},
+    \arxiv{2212.11203}
+    %
+    \item LHCb Collaboration,
+    \emph{Measurement of lepton universality parameters in $B^+ \to K^+ \ell^+ \ell^-$ and $B^0 \to K^{*0} \ell^+ \ell^-$ decays},
+    \arxiv{2212.09153}
+    %
+    \item LHCb Collaboration,
+    \emph{Test of lepton universality in $b \to s \ell^+ \ell^-$ decays},
+    \arxiv{2212.09152}
+    %
+    \item LHCb Collaboration,
+    \emph{Search for the rare decays $W^+ \to D^+_s \gamma$ and $Z \to D^0 \gamma$ at LHCb},
+    \arxiv{2212.07120}
+    %
+    \sloppy
+    \item LHCb Collaboration,
+    \emph{Search for $K^0_{\rm{S(L)}} \to \mu^+ \mu^- \mu^+ \mu^-$ decays at LHCb},
+    \arxiv{2212.04977}
+    %
+    \item LHCb Collaboration,
+    \emph{Amplitude analysis of $B^0 \to \overline{D}^0 D_s^+ \pi^-$ and $B^+ \to D^- D_s^+ \pi^+$ decays},
+    \arxiv{2212.02717}
+    %
+    \item LHCb Collaboration,
+    \emph{First observation of a doubly charged tetraquark and its neutral partner},
+    \arxiv{2212.02716}
+    %
+    \sloppy
+    \item LHCb Collaboration,
+    \emph{$J/\psi$ and $D^0$ production in $\sqrt{s_{\rm{NN}}} = 68.5~\rm{GeV}$ $\rm{PbNe}$ collisions},
+    \arxiv{2211.11652}
+    %
+    \sloppy
+    \item LHCb Collaboration,
+    \emph{Charmonium production in \(p\rm{Ne}\) collisions at $\sqrt{s_{\rm{NN}}} = 68.5~\rm{GeV}$},
+    \arxiv{2211.11645}
+    %
+    \item LHCb Collaboration,
+    \emph{Open charm production and asymmetry in $p\rm{Ne}$ collisions at $\sqrt{s_{\rm{NN}}} = 68.5~\rm{GeV}$},
+    \arxiv{2211.11633}
+    %
+    \sloppy
+    \item LHCb Collaboration,
+    \emph{Long-lived particle reconstruction downstream of the LHCb magnet},
+    \arxiv{2211.10920}
+    %
+    \sloppy
+    \item LHCb Collaboration,
+    \emph{Searches for the rare hadronic decays $B^0 \rightarrow p\bar{p}p\bar{p}$ and $B^0_{s} \rightarrow p\bar{p}p\bar{p}$},
+    \arxiv{2211.08847}
+    %
+    \item LHCb Collaboration,
+    \emph{First observation of the $B^+ \rightarrow D_s^+ D_s^- K^+$ decay},
+    \arxiv{2211.05034}
+    %
+    \item LHCb Collaboration,
+    \emph{Study of the $B^{-} \to \Lambda_{c}^{+} \bar{\Lambda}_{c}^{-} K^{-}$ decay},
+    \arxiv{2211.00812}
+    %
+    \item LHCb Collaboration,
+    \emph{Observation of a resonant structure near the $D_s^+ D_s^-$ threshold in the $B^+\to D_s^+ D_s^- K^+$ decay},
+    \arxiv{2210.15153}
+    %
+    \item LHCb Collaboration,
+    \emph{Observation of the $B^0_s \to D^{*+}D^{*-}$ decay},
+    \arxiv{2210.14945}
     %
     \item LHCb Collaboration,
     \emph{Measurement of the ratio of branching fractions $\mathcal{B}(B_c^+ \to B_s^0 \pi^+)/\mathcal{B}(B_c^+ \to J/\psi \pi^+)$},
@@ -179,15 +400,15 @@
   \journal{Conference \& Journal Articles}
   \begin{enumerate}[label={[\arabic*]}, leftmargin=1.5cm]
     %
-    \item L. Anderlini \emph{et al.},
-    \emph{Lamarr: the ultra-fast simulation option for the LHCb experiment},
-    in \emph{41st International Conference on High Energy Physics -- PoS(ICHEP2022)},
-    \href{https://doi.org/10.22323/1.414.0233}{\textbf{414} 233}, in preparation
-    %
     \item F. Ratnikov \emph{et al.},
     \emph{A full detector description using neural network driven simulation},
     in \emph{15th Pisa Meeting on Advanced Detectors},
-    \href{https://doi.org/10.1016/j.nima.2022.167591}{Nucl. Instrum. Meth. A \textbf{1046} (2022) 167591}
+    \href{https://doi.org/10.1016/j.nima.2022.167591}{Nucl. Instrum. Meth. A \textbf{1046} (2023) 167591}
+    %
+    \item L. Anderlini \emph{et al.},
+    \emph{Lamarr: the ultra-fast simulation option for the LHCb experiment},
+    in \emph{41st International Conference on High Energy Physics -- PoS(ICHEP2022)},
+    \href{https://doi.org/10.22323/1.414.0233}{\textbf{414} 233, 2022}
     %
     \item LHCb Collaboration, R. Aaij \emph{et al.},
     \emph{First measurement of the $Z\rightarrow \mu^+ \mu^-$ angular coefficients in the forward region of $pp$ collisions at $\sqrt{s}=13~\rm{TeV}$},
@@ -348,11 +569,6 @@
     \arxiv{2107.13428}
     %
   \end{enumerate}
-  %%%
-  %%%  Conference abstract
-  %%% =====================
-%  \journal{Conference \& Workshop Abstracts}
-%  \begin{enumerate}[label={[\arabic*]}, leftmargin=1.5cm]
-%    \item
-%  \end{enumerate}
 \end{cvcontent}
+
+\end{document}
