@@ -1,109 +1,102 @@
-\newcommand{\pkgname}[1]
+\newcommand{\software}[1]
   {\normalsize \color{hlcolor-0} \textbf{#1}}
 
 \newcommand{\pkginfo}[1]
-  {\small \color{hlcolor-1} \textsc{#1}}
+  {\small \color{hlcolor-1} {\ul{\textsc{Languages}:} #1}}
   
 \newcommand{\pkgdesc}[1]
-  {\normalsize \color{maincolor} {#1}}
+  {\normalsize \color{maincolor} \emph{#1}}
 
 
 \section*{Contributions to Open Source Software}
 \begin{cvcontent}
   %%%
-  %%%  hopaas
+  %%%  fast-simulation
+  %%% =================
+  \software{LHCb Fast Simulation}
+  \\ [0.5mm]
+  \pkginfo{Python, C}
+  \\ [1.5mm]
+  \pkgdesc{Set of tools and Python modules to prepare/process data, 
+  train Machine Learning models, and export them as C files to enable 
+  the integration within the LHCb software stack. Training scripts
+  are designed to build parameterizations for the Particle 
+  Identification system of the LHCb experiment.}
+  \\ [1.5mm]
+  \begin{itemize*}[label=\textcolor{iconcolor}{\textbullet}]
+    \item \texttt{mbarbetti/lb-pidsim-train} \hfill
+      \href{https://pypi.org/project/lb-pidsim-train}{\faPython}
+      \href{https://github.com/mbarbetti/lb-pidsim-train}{\faGithub}
+    \\ [0.5mm]
+    \item \texttt{landerlini/scikinC} \hfill
+      \href{https://pypi.org/project/scikinC}{\faPython}
+      \href{https://github.com/landerlini/scikinC}{\faGithub}
+  \end{itemize*}
+  \\ [4mm]
+  %%%
+  %%%  optimization
+  %%% ==============
+  \software{Hyperparameter Optimization in the Cloud}
+  \\ [0.5mm]
+  \pkginfo{Python, JavaScript, HTML}
+  \\ [1.5mm]
+  \pkgdesc{Set of Python modules to deliver and access a cloud-based
+  service for hyperparameter optimization through HTTP requests. 
+  Computing nodes contribute to optimization campaigns via token-based
+  authentication, and a web dashboard allows to monitor the status of
+  past and ongoing optimization studies.}
+  \\ [1.5mm]
+  \begin{itemize*}[label=\textcolor{iconcolor}{\textbullet}]
+    \item \texttt{landerlini/hopaas} \hfill
+      \href{https://hopaas.cloud.infn.it}{\faGlobe}
+    \\ [0.5mm]
+    \item \texttt{landerlini/hopaas\_client} \hfill
+      \href{https://github.com/landerlini/hopaas_client}{\faGithub}
+    \\ [0.5mm]
+    \item \texttt{mbarbetti/optunapi} \hfill
+      \href{https://pypi.org/project/optunapi}{\faPython}
+      \href{https://github.com/mbarbetti/optunapi}{\faGithub}
+  \end{itemize*}
+  \\ [4mm]
+  %%%
+  %%%  radiomics
+  %%% ===========
+  \software{Radiomics and Medical Physics}
+  \\ [0.5mm]
+  \pkginfo{Python, Jupyter Notebook}
+  \\ [1.5mm]
+  \pkgdesc{Set of notebooks and Python scripts for processing data,
+  and for training Machine Learning models powered by radiomic features 
+  to infer the histological type of mediastinal bulky lymphoma.}
+  \\ [1.5mm]
+  \begin{itemize*}[label=\textcolor{iconcolor}{\textbullet}]
+    \item \texttt{mbarbetti/lymphoma-classification} \hfill
+      \href{https://github.com/mbarbetti/lymphoma-classification}{\faGithub}
+  \end{itemize*}
+  \\ [4mm]
+  %%%
+  %%%  others
   %%% ========
-  \pkgname{landerlini/hopaas}
-    \button{https://hopaas.cloud.infn.it}{\faGlobe}
+  \software{Others}
   \\ [0.5mm]
-  \pkginfo{JavaScript, Python, HTML}
-  \\ [0.5mm]
-  \pkgdesc{Multi-nodes hyperparameter optimization campaigns submitting queries to a central, managed service}
-  \\ [4mm]
-  %%%
-  %%%  hopaas-client
-  %%% ===============
-  \pkgname{landerlini/hopaas\_client}
-    \button{https://github.com/landerlini/hopaas_client}{\faGithub}
-  \\ [0.5mm]
-  \pkginfo{Python}
-  \\ [0.5mm]
-  \pkgdesc{Python front-end to ease the access to the Hopaas service}
-  \\ [4mm]
-  %%%
-  %%%  tf-gen-models
-  %%% ===============
-  \pkgname{mbarbetti/tf-gen-models}
-    \button{https://github.com/mbarbetti/tf-gen-models}{\faGithub}
-    \button{https://pypi.org/project/tf-gen-models/}{\faPython}
-  \\ [0.5mm]
-  \pkginfo{Jupyter Notebook, Python}
-  \\ [0.5mm]
-  \pkgdesc{Ready to use implementations of state-of-the-art generative models in TensorFlow 2}
-  \\ [4mm]
-  %%%
-  %%%  lb-pidsim-train
-  %%% =================
-  \pkgname{mbarbetti/lb-pidsim-train}
-    \button{https://github.com/mbarbetti/lb-pidsim-train}{\faGithub}
-    \button{https://pypi.org/project/lb-pidsim-train/}{\faPython}
-  \\ [0.5mm]
-  \pkginfo{Python}
-  \\ [0.5mm]
-  \pkgdesc{Scripts and logics to train PID models for the Ultra-Fast Simulation of the LHCb experiment}
-  \\ [4mm]
-  %%%
-  %%%  scikinC
-  %%% =================
-  \pkgname{landerlini/scikinC}
-    \button{https://github.com/landerlini/scikinC}{\faGithub}
-    \button{https://pypi.org/project/scikinC}{\faPython}
-  \\ [0.5mm]
-  \pkginfo{Python}
-  \\ [0.5mm]
-  \pkgdesc{A converter for Scikit-Learn and Keras to hardcoded C function}
-  \\ [4mm]
-  %%%
-  %%%  al-folio
-  %%% ==========
-  \pkgname{alshedivat/al-folio}
-    \button{https://alshedivat.github.io/al-folio}{\faGlobe}
-    \button{https://github.com/alshedivat/al-folio}{\faGithub}
-    \button{https://hub.docker.com/r/amirpourmand/al-folio}{\faDocker}
-  \\ [0.5mm]
-  \pkginfo{HTML, JavaScript}
-  \\ [0.5mm]
-  \pkgdesc{A beautiful, simple, clean, and responsive Jekyll theme for academics}
-  \\ [4mm]
-  %%%
-  %%%  mlinfn-advanced-hackathon
-  %%% ===========================
-  \pkgname{landerlini/mlinfn-advanced-hackathon}
-    \button{https://github.com/landerlini/mlinfn-advanced-hackathon}{\faGithub}
-  \\ [0.5mm]
-  \pkginfo{Jupyter Notebook}
-  \\ [0.5mm]
-  \pkgdesc{Notebooks and code for the ML\_INFN Advanced Hackathon events}
-%  \\ [4mm]
-  \newpage\noindent
-  %%%
-  %%%  lymphoma-classification
-  %%% =========================
-  \pkgname{mbarbetti/lymphoma-classification}
-    \button{https://github.com/mbarbetti/lymphoma-classification}{\faGithub}
-  \\ [0.5mm]
-  \pkginfo{Jupyter Notebook, Python}
-  \\ [0.5mm]
-  \pkgdesc{Bulky mediastinal lymphoma classification with machine learning techniques}
-  \\ [4mm]
-  %%%
-  %%%  OptunAPI
-  %%% ==========
-  \pkgname{mbarbetti/optunapi}
-    \button{https://github.com/mbarbetti/optunapi}{\faGithub}
-    \button{https://pypi.org/project/optunapi/}{\faPython}
-  \\ [0.5mm]
-  \pkginfo{Python}
-  \\ [0.5mm]
-  \pkgdesc{Simple API to distribute hyperparameter optimization through HTTP requests}
+  \pkginfo{Python, JavaScript, HTML, Jupyter Notebook}
+  \\ [1.5mm]
+  \pkgdesc{List of other personal contributions to open-source software.
+  It includes a Jekyll theme for academic websites, a Python package to
+  implement generative models in TensorFlow, and a repository containing
+  notebooks and code for INFN education events.}
+  \\ [1.5mm]
+  \begin{itemize*}[label=\textcolor{iconcolor}{\textbullet}]
+    \item \texttt{alshedivat/al-folio} \hfill
+      \href{https://hub.docker.com/r/amirpourmand/al-folio}{\faDocker}
+      \href{https://alshedivat.github.io/al-folio}{\faGlobe}
+      \href{https://github.com/alshedivat/al-folio}{\faGithub}
+    \\ [0.5mm]
+    \item \texttt{mbarbetti/tf-gen-models} \hfill
+      \href{https://pypi.org/project/tf-gen-models}{\faPython}
+      \href{https://github.com/mbarbetti/tf-gen-models}{\faGithub}
+    \\ [0.5mm]
+    \item \texttt{landerlini/mlinfn-advanced-hackathon} \hfill
+      \href{https://github.com/landerlini/mlinfn-advanced-hackathon}{\faGithub}
+  \end{itemize*}
 \end{cvcontent}

@@ -76,8 +76,8 @@
 \chead{
   \fontsize{10pt}{12pt}\selectfont
   \MyName
-  \hfill
-  \url{\Website}
+%  \hfill
+%  \url{\Website}
   \hfill
   Last updated: \monthyear\today
 }
@@ -158,39 +158,55 @@
       \Affiliation
       \\[0.2cm]
       \Address
-      \\[0.3cm]
+      \\[0.2cm]
       \makefield{\faEnvelope}{\mail{\Email}}
-      \, | \,
-      \makefield{\faGlobe}{\url{\Website}}
+%      \, | \,
+%      \makefield{\faGlobe}{\url{\Website}}
     }
   }
 \end{center}
-
-%%%  RESEARCH
-%%% ==========
-\input{research}
 
 %%%  EDUCATION
 %%% ===========
 \input{education}
 
+%%%  SCHOOLS
+%%% ===========
+\input{schools}
+
+\newpage\noindent
+
+%%%  RESEARCH
+%%% ==========
+\input{research}
+
+\newpage\noindent
+
 %%%  EXPERIENCE
 %%% ============
 \input{experience}
+
+%%%  SOFTWARE
+%%% ==========
+\input{software}
+
+%%%  LEADERSHIP
+%%% ============
+\input{leadership}
+
+\newpage\noindent
 
 %%%  TEACHING
 %%% ==========
 \input{teaching}
 
-%%%  COMMUNITY
-%%% ===========
-\input{community}
+%%%  DISSEMINATION
+%%% ===============
+\input{dissemination}
 
-\newpage\noindent
-
-%%%  SCHOOLS
-%%% ===========
-\input{schools}
+%%%  EVENTS
+%%% ========
+\input{events}
 
 %%%  WORKSHOPS
 %%% ===========
@@ -198,25 +214,9 @@
 
 \newpage\noindent
 
-%%%  EVENTS
-%%% ========
-\input{events}
-
-%%%  DISSEMINATION
-%%% ===============
-\input{dissemination}
-
-\newpage\noindent
-
 %%%  PUBLICATIONS
 %%% ==============
 \input{publications}
-
-%%%  SOFTWARE
-%%% ==========
-\input{software}
-
-\vspace{0.5mm}
 
 \begin{multicols}{2}
 %%%  TECHNICAL SKILLS
