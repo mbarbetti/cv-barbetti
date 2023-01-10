@@ -1,5 +1,6 @@
 \section*{Research Activities}
 \begin{cvcontent}
+  \onehalfspacing
   Since 2019, I am member of the LHCb experiment at CERN's Large 
   Hadron Collider (LHC). In this context, I had the opportunity to 
   focus on some of the most challenging computing developments for 
@@ -7,7 +8,7 @@
   application of advanced \emph{Deep Learning} techniques to large 
   samples of proton-proton collision data and their training and 
   deployment in a world-wide distributed environment.
-%  \\
+  \\
   In the same period, in collaboration with the Careggi University 
   Hospital in Florence, 
   I also had the opportunity to contribute to the research in Medical 
@@ -15,47 +16,50 @@
   radiomic\footnote{In the field of medicine, \emph{Radiomics} is a new 
   field of image analysis in which digital medical images are converted 
   into quantitative high-dimensional data.} datasets.
-%  \\
+  \\
   I am currently preparing my Ph.D. thesis in Smart Computing at 
   the University of Florence with original contributions on 
   LHCb Simulation and Radiomics.
-  \\ [1.5mm]
+  \\ [2mm]
   My research activity is mainly devoted to the development of a novel 
   LHCb \emph{ultra-fast simulation} framework, called \textsc{Lamarr}
-  \ref{pub:lamarr-ichep} that I have recently presented during the 
+  \ref{pub:lamarr-ichep}, that I have recently presented during the 
   international workshop \hyperlink{acat-2022}{[ACAT22]}. \textsc{Lamarr} 
   consists of a pipeline of modular parameterizations designed to replace 
   both the physics simulation and the reconstruction steps. Most of the 
   parameterizations rely on Machine Learning algorithms \ref{pub:gan-pm},
   such as \emph{generative models}, that were demonstrated to be 
   able to well reproduce the distributions obtained from the 
-  detailed simulation \ref{pub:gan-acat}.
-  \\ [1.5mm]
+  detailed simulation \ref{pub:gan-acat}. Part of my Master Thesis
+  was devoted to develop a prototype of such parameterizations: this
+  preliminary study was honored with the national INFN award
+  ``Giulia Vita Finzi'' for the best thesis on computing and networks.
+  \\ [2mm]
   I am an active developer within the LHCb Simulation team, with
   the responsibility for the parameterization of the LHCb Particle 
   Identification (PID) system. Generative Deep Neural Networks
   succeed in reproducing the analysis-level classifiers defined 
-  by the PID reconstruction algorithms, showing promising results
-  already presented at national [\hyperlink{ccr-2021}{CCR21}, 
-  \hyperlink{sif-2021}{SIF21}] and international \hyperlink{ltd}{[LTD]} 
-  conferences. Parameterizing with high accuracy the PID multivariate 
+  by the PID reconstruction algorithms, showing promising results,
+  which I presented at national \hyperlink{sif-2021}{[SIF21]} 
+  and international \hyperlink{ltd}{[LTD]} conferences. 
+  Parameterizing with high accuracy the PID multivariate 
   distributions requires training such specialized models
   in GPU-intensive \emph{hyperparameter optimization} campaigns.
-%  \\
-  To profit from multiple computing resources made opportunistically
-  available to the LHCb Collaboration, I proposed a client-server
-  approach with a centralized service defining the optimization
-  procedure in multiple instances running in parallel on different 
-  providers. The approach was validated on resources made available 
-  to LHCb by CERN via the \hyperlink{cloud-bank}{[CloudBank]} initiative
-  or by INFN and CINECA granting access to the Marconi 100 supercomputer. 
-  During the last few months, I have been converting the validated 
-  prototype into an INFN Cloud service, named Hopaas \ref{pub:hopaas}, 
-  featuring a web dashboard and a token-based user authentication 
-  procedure integrated to the INFN user identity management tools.
-  I have recently presented Hopaas during the international workshop 
-  \hyperlink{acat-2022}{[ACAT22]}.
-  \\ [1.5mm]
+  \\
+  To this end, to profit from multiple computing resources made 
+  opportunistically available to the LHCb Collaboration, I proposed 
+  a client-server approach with a centralized service defining the 
+  optimization procedure in multiple instances running in parallel 
+  on different providers. The approach was validated on resources made 
+  available to LHCb by CERN via the \hyperlink{cloud-bank}{[CloudBank]} 
+  initiative or by INFN and CINECA granting access to the Marconi 100 
+  supercomputer. During the last few months, I have been converting the 
+  validated prototype into an INFN Cloud service, named Hopaas 
+  \ref{pub:hopaas}, featuring a web dashboard and a token-based user 
+  authentication procedure integrated to the INFN user identity management 
+  tools. I have recently presented Hopaas during the international 
+  workshop \hyperlink{acat-2022}{[ACAT22]}.
+  \\ [2mm]
   To enable the deployment of the optimized models in the LHCb software 
   stack, running in multiple data centers around the world connected 
   via the LHCb Computing Grid, I contributed to the development of 
@@ -63,26 +67,26 @@
   Machine Learning models into C files that, once compiled, 
   are distributed with the CernVM File System and dynamically 
   linked to the LHCb applications.
-  \\ [1.5mm]
+  \\ [2mm]
   My research is strongly connected to the data analysis effort within 
   the LHCb group in Florence, exploiting advanced statistical treatment 
   of the PID classifiers with Machine Learning techniques to shed light 
   on the nature and the antiprotons observed in primary cosmic rays 
   \ref{pub:smog-pub}.
-  \\ [1.5mm]
+  \\ [2mm]
   As part of the research activities for my Ph.D., I am exploring the 
   application of Machine Learning techniques to Medical Physics to 
-  develop solutions employable in the emerging ``personalized medicine''. 
+  develop solutions suitable for the emerging ``personalized medicine''. 
   In particular, I am working to build a Machine Learning model able 
   to infer the histological type of mediastinal bulky lymphomas, one 
   of the most common hematologic cancers, only using radiomic features 
   drawn from PET images \ref{pub:phys-med}. The aim of the study is to 
   understand how PET radiomic features may predict lymphoma histology 
   and in the future support its diagnosis, offering non-invasive solutions 
-  tailored to the single patient. Preliminary results are promising and
-  have been presented at national \hyperlink{sif-2022}{[SIF22]} and 
+  tailored to the single patient. I presented the promising preliminary 
+  results at national~\hyperlink{sif-2022}{[SIF22]} and 
   international \hyperlink{ecmp-2022}{[ECMP2022]} conferences.
-  \\ [1.5mm]
+  \\ [2mm]
   In 2020 I joined the \emph{ML-INFN} project, a national initiative 
   of INFN to coordinate the effort toward the widespread application 
   of Machine Learning technologies to research activities. In 2022 I 
