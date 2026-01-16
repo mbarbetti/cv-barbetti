@@ -40,16 +40,29 @@
 ]{geometry}
 
 % pre-define some colors the user can choose from
-\definecolor{cvblue}{HTML}{024374}
-\definecolor{cvsidecolor}{HTML}{e0e2e2}
-\definecolor{cvsectioncolor}{HTML}{049dbf}
-\definecolor{cvsubsectioncolor}{HTML}{024374}
+\definecolor{navy-blue}{HTML}{024374}
+\definecolor{light-gray}{HTML}{E5E4E2}
+\definecolor{gray}{HTML}{808080}
+\definecolor{steel-gray}{HTML}{71797E}
+\definecolor{turquoise}{HTML}{049dbf}
+\definecolor{lime-green}{HTML}{32CD32}
+\definecolor{green-midori}{HTML}{008000}
+\definecolor{gray-forest}{HTML}{2f4f4f}
+\definecolor{dark-red}{HTML}{940000}
+\definecolor{orange}{HTML}{ff4d00}
+\definecolor{gray-red}{HTML}{eedbdb}
+\definecolor{dark-purple}{HTML}{6E00B3}
+\definecolor{purple}{HTML}{9D00FF}
+\definecolor{magenta}{HTML}{FD3DB5}
 % set default values
-\colorlet{maincolor}{cvblue}
-\colorlet{sidecolor}{cvsidecolor}
-\colorlet{sectioncolor}{cvsectioncolor}
-\colorlet{subsectioncolor}{cvsubsectioncolor}
+\colorlet{maincolor}{navy-blue}
+\colorlet{sidecolor}{light-gray}
+\colorlet{sectioncolor}{navy-blue}
+\colorlet{subsectioncolor}{navy-blue}
 \colorlet{itemtextcolor}{black!90}
+\colorlet{itemtitlecolor}{black!90}
+\colorlet{itemorganizationcolor}{turquoise}
+\colorlet{iteminfocolor}{gray}
 % colors for document body (right column)
 % let user define main color
 \DeclareOptionX{maincolor}{\colorlet{maincolor}{#1}}
@@ -155,7 +168,7 @@
 	\RequirePackage{fontawesome5}
 	\RequirePackage{academicons}
 \else
-	\RequirePackage{fontawesome}
+	\RequirePackage{fontawesome5}
 \fi
 \RequirePackage{tikz}
 \usetikzlibrary{arrows, backgrounds}
@@ -206,10 +219,20 @@
 
 % section style for cv table headings in right column
 % \titleformat{<command>}[<shape>]{<format>}{<label>}{<sep>}{<before>}[<after>]
+\newcommand{\sectionrule}{%
+  \par\nobreak
+  \vspace{0.2ex}
+  \hrule height 1.5pt
+  \vspace{0.4ex}
+}
+\titleformat{\section}
+  {\color{sectioncolor}\normalfont\bfseries\LARGE}
+  {}
+  {0pt}
+  {}
+  [\sectionrule]
+\titlespacing*{\section}{0pt}{1.5ex}{0pt}
 \newcommand*{\cvsection}[1]{\section*{#1}}
-\titleformat{\section}%
-	{\color{sectioncolor}\normalfont\bfseries\LARGE}{}{0pt}{}
-\titlespacing*{\section}{0pt}{1.5ex}{1ex}
 
 % grey subsection style for right column
 \newcommand*{\cvsubsection}[1]{\subsection*{#1}}
@@ -266,15 +289,15 @@
 \newcommand*{\cvphone}[1]{\cvcustomdata{\faPhone}{#1}}
 \newcommand*{\cvsite}[1]{\cvcustomdata{\faGlobe}{\href{#1}{#1}}}
 \newcommand*{\cvmail}[1]{\cvcustomdata{\faAt}{\href{mailto:#1}{#1}}}
-\newcommand*{\cvlinkedin}[1]{\cvcustomdata{\faLinkedin}{\href{https://www.linkedin.com/in/#1}{#1}}}
-\newcommand*{\cvgithub}[1]{\cvcustomdata{\faGithubAlt}{\href{https://github.com/#1}{#1}}}
+\newcommand*{\cvlinkedin}[1]{\cvcustomdata{\faLinkedinIn}{\href{https://www.linkedin.com/in/#1}{#1}}}
+\newcommand*{\cvgithub}[1]{\cvcustomdata{\faGithub*}{\href{https://github.com/#1}{#1}}}
 
 % TODO find a cleaner solution for consistent spacing
 \newcommand{\nameandjob}{%
 	{\Huge\color{maincolor}\cvname}\par%
 	\setlength{\parskip}{2ex}
 	{\Large\color{black!80}\cvjobtitle}\par%
-	\setlength{\parskip}{1ex}
+	\setlength{\parskip}{2ex}
 }
 
 \newcommand{\profileroundedcorners}{%
@@ -345,6 +368,7 @@
 
 % uniform icon style for all skill icons, e.g. flags or fontawesome icons
 \newcommand{\cvicon}[1]{\makebox[1em]{\color{iconcolor} #1}}
+\newcommand{\cviconlarge}[1]{\makebox[1em]{\color{iconcolor} \large #1}}
 \newcommand{\flag}[1]{\includegraphics[align=c, width=1em]{#1}}
 
 % \pointskill[<indent>]{<icon>}{<description>}{<points>}[<maxpoints>] creates 
@@ -375,9 +399,20 @@
 
 % \skill[<indent>]{<icon>}{<description>} creates in sidebar
 % | [indent] [icon]  some longer skill description  |
-\newcommand{\skill}[3][0em]{
-	\hspace{#1} \cvicon{#2} ~ \parbox{\linewidth-#1-2.5em}{#3} \hfill \par
+\newcommand{\longskill}[3][0em]{
+	\hspace{#1} \cviconlarge{#2} ~ \parbox{\linewidth-#1-2.5em}{#3} \hfill \par
 }
+
+%\newcommand{\skill}[3][0em]{
+%	\hspace{#1} \cvicon{#2} ~ \parbox{\linewidth-#1-2.5em}{#3} \hfill \par
+%}
+\newcommand{\skill}[3][0em]{
+	\noindent
+	\hspace{#1}\cvicon{#2}~
+	\parbox[t]{\linewidth-#1-2.5em}{#3}%
+	\par\vspace{0.15em}
+}
+
 
 % label for wheel charts
 \newcommand{\chartlabel}[1]{%
@@ -411,6 +446,7 @@
 \newcommand{\membership}[3][4em]{
 	\includegraphics[align=c,width=#1]{#2} & {#3} \\[3ex]
 }
+
 
 % adapted from https://tex.stackexchange.com/a/82729
 \newcommand{\wheelchart}[4][-90]{%
@@ -611,6 +647,99 @@
 	\parbox[t]{0.81\textwidth}{%
 		\textbf{#1} \par \textit{#2} \par #3 \vspace{\parsep}%
 	}\\
+}
+
+\newcommand{\cvexpitem}[5]{
+    \parbox[t]{\textwidth}{
+        {\color{itemtitlecolor} \normalfont\Large {#1}} \\[0.5em]
+        {\color{itemorganizationcolor} \normalfont\bfseries\large {#2}} \\
+        {\color{iteminfocolor} \normalfont\small
+            {
+                {\faCalendar* #3} \qquad 
+                {\faMapMarker* #4}
+            }
+        } \\[0.5em]
+        {\color{itemtextcolor} \normalfont {#5}}
+    }\\
+}
+
+\newcommand{\cveduitem}[6]{
+    \parbox[t]{\textwidth}{
+        {\color{itemtitlecolor} \normalfont\Large {#1}} \\[0.5em]
+        {\color{itemorganizationcolor} \normalfont\bfseries\large {#2}} \\
+        {\color{iteminfocolor} \normalfont\small
+            {
+                {\faCalendar* #3} \qquad 
+                {\faMapMarker* #4} \qquad
+                {\faGraduationCap \, \textbf{Score:} #5}
+            }
+        } \\[0.5em]
+        {\color{itemtextcolor} \normalfont {#6}}
+    }\\
+}
+
+\newcommand{\cvcertitem}[4]{
+    \parbox[t]{\textwidth}{
+        {\color{itemorganizationcolor} \normalfont\bfseries\large {#1}}\\[0.1em]
+        {\color{iteminfocolor} \normalfont\small
+            { 
+                {\faUniversity \, \textbf{Issued by:} #2} \qquad
+                {#3} \qquad
+                {\faCalendar* #4}
+            }
+        }
+    }\\
+}
+
+\newcommand{\cvgenitem}[4]{
+    \parbox[t]{\textwidth}{
+        {\color{itemtitlecolor} \normalfont\bfseries {#1}} \\[0.1em]
+        {\color{iteminfocolor} \normalfont\small
+            {
+                {\faCalendar* #2} \qquad
+                {\faBriefcase \, #3}
+            }
+        } \\[0.2em]
+        {\color{itemtextcolor} \normalfont {#4}}
+    }\\
+}
+
+\newcommand{\cvawitem}[4]{
+    \parbox[t]{\textwidth}{
+        {\color{itemtitlecolor} \normalfont\bfseries\large {#1}} \\
+        {\color{iteminfocolor} \normalfont\small
+            { 
+                {\faUniversity \, \textbf{Issued by:} #2} \qquad
+                {\faCalendar* #3}
+            }
+        } \\[0.5em]
+        {\color{itemtextcolor} \normalfont {#4}}
+    }\\
+}
+
+\newcommand{\cvconfitem}[4]{
+    \parbox[t]{\textwidth}{
+        {\color{itemtitlecolor} \normalfont\bfseries {#1}} \\[0.1em]
+        {\color{iteminfocolor} \normalfont\small
+            {
+                {\faCalendar* #2} \qquad
+                {\faMapMarker* \, #3}
+            }
+        } \\[0.2em]
+        {\color{itemtextcolor} \normalfont {#4}}
+    }\\
+}
+
+\newcommand{\simplemembership}[3]{
+    \parbox[t]{\textwidth}{
+        {\color{itemtextcolor} \normalfont\large {#1}} \\[0.1em]
+        {\color{iteminfocolor} \normalfont\small 
+            {
+                {\faCalendar* #2} \qquad
+                {#3}
+            }
+        }
+    }\\
 }
 
 % EOF - fortysecondscv.cls

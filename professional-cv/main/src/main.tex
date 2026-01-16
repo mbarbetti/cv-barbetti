@@ -1,18 +1,8 @@
-% FortySecondsCV LaTeX template
-% Copyright © 2019 René Wirnata <rene.wirnata@pandascience.net>
-% Licensed under the 3-Clause BSD License. See LICENSE file for details.
-%
-% Attributions
-% ------------
-% * fortysecondscv is based on the twentysecondcv class by Carmine Spagnuolo 
-%   (cspagnuolo@unisa.it), released under the MIT license and available under
-%   https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex
-% * further attributions are indicated immediately before corresponding code
-
 
 %-------------------------------------------------------------------------------
 %                             ADDITIONAL PACKAGES
 %-------------------------------------------------------------------------------
+
 \documentclass[
   a4paper, 
 %   showframes,
@@ -70,6 +60,10 @@
 % enable using special symbol
 \usepackage{textcomp}
 
+% custom packages
+\usepackage{titlesec}
+\usepackage{dashrule}
+
 
 %-------------------------------------------------------------------------------
 %                            PERSONAL INFORMATION
@@ -79,8 +73,7 @@
 % your name
 \cvname{Matteo Barbetti}
 % job title/career
-\cvjobtitle{Ph.D. Student in\\[0.2em] 
-            Smart Computing}
+\cvjobtitle{Data Scientist}
 
 %% optional information
 % profile picture
@@ -88,119 +81,207 @@
 % date of birth
 \cvbirthday{May 6, 1994}
 % short address/location, use \newline if more than 1 line is required
-\cvaddress{Via Vittorio Emanuele II 193,
-           \newline{50134, Firenze, Italy}}
+%\cvaddress{Via Reginaldo Giuliani 86,
+%           \newline{50141, Firenze, Italy}}
 % phone number
-\cvphone{+39 347 8595002}
+\cvphone{+39 3478595002}
 % email address
 \cvmail{matteo.barbetti.94@gmail.com}
 % personal website
-\cvsite{https://mbarbetti.github.io}
+%\cvsite{https://mbarbetti.github.io}
 % LinkedIn profile name
-%\cvlinkedin{matteo-barbetti}
+\cvlinkedin{matteo-barbetti}
 % GitHub profile name
-%\cvgithub{mbarbetti}
+\cvgithub{mbarbetti}
+
 
 %-------------------------------------------------------------------------------
 %                              SIDEBAR 1st PAGE
 %-------------------------------------------------------------------------------
+
 % add more profile sections to sidebar on first page
+
 \addtofrontsidebar{
-	% include gosquare national flags from https://github.com/gosquared/flags;
-	% naming according to ISO 3166-1 alpha-2 country codes
-	\graphicspath{{professional-cv/img/flags/}}
 	
-	\vspace{0.25cm}
-	
-    \profilesection{About Me}
-	\aboutme{
-		Ph.D. Student in Smart Computing at the University of Florence, I deal with Artificial Intelligence and its applications to Particle and Medical Physics. Passionate about innovation and scientific dissemination, I never refuse going out to discuss new ideas.
-	}
-	
-	\vspace{0.25cm}
-	
-	\profilesection{Memberships}
-	\begin{memberships}
-		\membership[4em]{professional-cv/main/img/INFN_logo.png}
-		{\href{https://www.fi.infn.it}{Istituto Nazionale di
-		                               \newline{Fisica Nucleare}}}\\
-%    	\membership[4em]{professional-cv/main/img/CERN_logo.png}
-%    	{\href{https://home.cern}{Conseil Européen pour 
-%    	                          \newline{la Recherche Nucléaire}}}\\
-		\membership[4em]{professional-cv/main/img/LHCb_logo.jpg}
-		{\href{http://lhcb-public.web.cern.ch/lhcb-public/}{LHCb Collaboration}}\\
-		\membership[4em]{professional-cv/main/img/AISF_logo.png}
-		{\href{http://ai-sf.it}{Associazione Italiana
-		                        \newline{Studenti di Fisica}}}
-%		\membership[4em]{}{\rule{\linewidth}{1pt}}
-	\end{memberships}
-	
-	\vspace{0.25cm}
-	
-	% social network accounts incl. proper hyperlinks
-	\profilesection{Social Network}
-		\begin{icontable}{2.5em}{1em}
-			\social{\faLinkedinSquare}
-				{https://www.linkedin.com/in/matteo-barbetti}
-				{matteo-barbetti}
-			\social{\faTwitter}
-				{https://twitter.com/mbarbetz}
-				{@mbarbetz}
-			\social{\faGithub}
-				{https://github.com/mbarbetti}
-				{mbarbetti}
-%			\social{\faGitlab}
-%				{https://gitlab.com/mbarbetti}
-%				{mbarbetti}
-		\end{icontable}
+	\vspace{0.8em}
+
+    % +-------------+
+    % |   SUMMARY   |
+    % +-------------+
+    \profilesection{Summary}
+    \vspace{-0.5em}
+	    %
+        \longskill{\faPython}
+          {\textbf{8+ years of Python development}, applied to scientific computing and industrial solutions.}
+        %
+        \vspace{0.5em}
+        %
+        \longskill{\faBrain}
+          {\textbf{5+ years of hands-on ML experience}, designing and deploying predictive models.}
+        %
+        \vspace{0.5em}
+        %
+        \longskill{\faAtom}
+          {\textbf{Former academic researcher in Particle Physics}, with strong foundations in data analysis and simulation.}
+        %
+        \vspace{0.5em}
+        %
+        \longskill{\faChartLine}
+          {\textbf{AI consultant}, building data-driven solutions for real-world industrial problems.}
+        %
+        \vspace{0.5em}
+        %
+        \longskill{\faLightbulb}
+          {\textbf{Strong interest in emerging technologies}, particularly AI, GenAI, and Quantum Computing.}
+
+    \vspace{0.8em}
+
+    % +---------------+
+    % |   STRENGTHS   |
+    % +---------------+
+    \profilesection{Strengths}
+    \vspace{-0.5em}
+	    %
+        \longskill{\faPuzzlePiece}
+          {\textbf{Analytical problem solver.} Structured, data-driven approach to complex challenges.}
+        %
+        \vspace{0.5em}
+        %
+        \longskill{\faRocket}
+          {\textbf{Autonomous, execution-driven.} Owns tasks end-to-end and delivers effective solutions.}
+        %
+        \vspace{0.5em}
+        %
+        \longskill{\faHandshake}
+          {\textbf{Collaborative, client-focused.} Strong teamwork and clear communication aligned with client needs.}
+
 }
 
 
 %-------------------------------------------------------------------------------
 %                              SIDEBAR 2nd PAGE
 %-------------------------------------------------------------------------------
+
 \addtobacksidebar{
 
-	\vspace{0.25cm}
+    \vspace{1em}
 
-	\profilesection{Soft Skills}
-        \skill{\faSitemap}{Complex problem-solving}
-		\skill{\faRocket}{Analytical thinking and innovation}
-		\skill{\faLineChart}{Critical thinking and analysis}
- 		\skill{\faSearchPlus}{Attention to detail, trustworthiness}
- 		\skill{\faUsers}{Leadership and social influence}
-
-    \vspace{0.25cm}
-
+    % +------------+
+    % |   SKILLS   |
+    % +------------+
 	\profilesection{Technical Skills}
-		\skill{\faLaptop}{\underline{Operating systems}}
-		    \skill[1.8em]{\faWindows}{Windows}
-		    \skill[1.8em]{\faApple}{Mac OS}
-		    \skill[1.8em]{\faLinux}{Linux}
-		\skill{\faTerminal}{\underline{Programming languages}}
-		    \pointskill[1.8em]{\faCode}{Python}{4}[5]
-		    \pointskill[1.8em]{\faCode}{C/C++}{2}[5]
-		    \pointskill[1.8em]{\faCode}{HTML}{1}[5]
-%		    \pointskill[1.8em]{\faCode}{Julia}{1}[5]
-		\skill{\faCubes}{\underline{Machine Learning frameworks}}
-		    \skill[1.8em]{\faCube}{TensorFlow}
-		    \skill[1.8em]{\faCube}{Scikit-Learn}
-%		    \skill[1.8em]{\faCube}{XGBoost}
-		    \skill[1.8em]{\faCube}{Optuna}
-		\skill{\faCogs}{\underline{Other suites}}
-		    \skill[1.8em]{\faCog}{Visual Studio Code}	
-		    \skill[1.8em]{\faCog}{Google Workspace}		 
-		    \skill[1.8em]{\faCog}{Microsoft Office}
-		    \skill[1.8em]{\faCog}{LaTeX}
-		    \skill[1.8em]{\faCog}{Git}
+    \vspace{-0.5em}
+        %
+        \skill{\faLaptopCode}{\textbf{Data Science Toolkit}}
+            %
+            \skill[1.5em]{\faAngleRight}{
+                \underline{Data handling:}\\ \texttt{numpy}, \texttt{pandas}, \texttt{geopandas}
+            }
+            %
+            \skill[1.5em]{\faAngleRight}{
+                \underline{Data visualization:}\\ \texttt{matplotlib}, \texttt{seaborn}
+            }
+            %
+            \skill[1.5em]{\faAngleRight}{
+                \underline{Classical ML models:}\\ \texttt{scikit-learn}, \texttt{xgboost}
+            }
+            %
+            \skill[1.5em]{\faAngleRight}{
+                \underline{Neural networks:}\\ \texttt{pytorch}, \texttt{tensorflow}, \texttt{keras}
+            }
+            %
+            \skill[1.5em]{\faAngleRight}{
+                \underline{Model optimization:}\\ \texttt{optuna}, \texttt{gurobipy}, \texttt{ortools}
+            }
+        %
+        \vspace{0.5em}
+        %
+        \skill{\faServer}{\textbf{Scalable Computing}}
+            %
+            \skill[1.5em]{\faAngleRight}{
+                \underline{Cloud Computing:} Azure \& AWS (compute, storage, ML services)
+            }
+            %
+            \skill[1.5em]{\faAngleRight}{
+                \underline{High-Performance Computing:} SLURM-based batch systems
+            }
+            %
+            \skill[1.5em]{\faAngleRight}{
+                \underline{GPU-powered acceleration:} CUDA-enabled workflows
+            }
+        %
+        \vspace{0.5em}
+        %
+        \skill{\faBoxes}{\textbf{MLOps \& Deployment}}
+            %
+            \skill[1.5em]{\faAngleRight}{
+                \underline{Containerization:}\\ Docker, Singularity / Apptainer
+            }
+            %
+            \skill[1.5em]{\faAngleRight}{
+                \underline{Orchestration:} Kubernetes
+            }
+            %
+            \skill[1.5em]{\faAngleRight}{
+                \underline{CI/CD pipelines:}\\ GitHub Actions, GitLab CI
+            }
 
-    \vspace{0.25cm}
+    \vspace{1em}
 
+    % +-----------------+
+    % |   MEMBERSHIPS   |
+    % +-----------------+
+	\profilesection{Memberships}
+    \vspace{-1em}
+        %
+%        \simplemembership{Qiskit Advocate Program}
+%          {2026 -- now}{\faUsers \, Community}
+        %
+%        [1.5em]
+        %
+        \simplemembership{Italian National Research Center for HPC, Big Data and Quantum Computing (ICSC)}
+          {2023 -- 2024}{\faFlask \, Research}
+        %
+        [1.5em]
+        %
+        \simplemembership{LHCb Collaboration at CERN}
+          {2017 -- 2024}{\faFlask \, Research}
+        %
+        [1.5em]
+        %
+        \simplemembership{Italian National Institute for Nuclear Physics (INFN)}
+          {2017 -- 2024}{\faFlask \, Research}
+        %
+        [1.5em]
+        %
+        \simplemembership{Italian Association of Physics Students (AISF)}
+          {2017 -- 2021}{\faUsers \, Community}
+
+    \vspace{1em}
+
+    % +---------------+
+    % |   LANGUAGES   |
+    % +---------------+
 	\profilesection{Languages}
-		\pointskill{\flag{professional-cv/main/img/flags/IT.png}}{Italian}{5}[5]
-  	    \pointskill{\flag{professional-cv/main/img/flags/GB.png}}{English}{3}[5]
-  	    \pointskill{\flag{professional-cv/main/img/flags/ES.png}}{Spanish}{1}[5]
-  	    
+    % include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+        %
+		\pointskill{
+            \flag{professional-cv/main/img/flags/IT.png}
+        }{Italian}{5}[5]
+        %
+  	    \pointskill{
+            \flag{professional-cv/main/img/flags/GB.png}
+        }{English}{3}[5]
+        %
+%  	    \pointskill{
+%            \flag{professional-cv/main/img/flags/ES.png}
+%        }{Spanish}{1}[5]
+
+
+    % +--------------+
+    % |   DIAGRAMS   |
+    % +--------------+
 %	\profilesection{Diagrams}
 %	\chartlabel{Bubble Diagram}
 %	\begin{figure}\centering
@@ -218,315 +299,435 @@
 %	\chartlabel{Wheel Chart}
 %
 %	\wheelchart{4em}{2em}{%
-% 	20/3em/maincolor!50/Chill,
-%	15/3em/maincolor!15/Play,
-%  	30/4em/maincolor!40/Sleep,
-%  	20/3em/maincolor!20/Eat
+% 	    20/3em/maincolor!50/Chill,
+%	    15/3em/maincolor!15/Play,
+%  	    30/4em/maincolor!40/Sleep,
+%  	    20/3em/maincolor!20/Eat
 %	}
-%
+
+
+    % +---------------+
+    % |   BARSKILLS   |
+    % +---------------+
 %	\profilesection{Barskills}
 %	\barskill{\faSkyatlas}{Wearing asian rice hats}{60}
 %	\barskill{\faImage}{Playing Chess}{30}
 %	\barskill{\faMusic}{Playing the bamboo flute}{50}
+    
 }
-
 
 %-------------------------------------------------------------------------------
 %                         TABLE ENTRIES RIGHT COLUMN
 %-------------------------------------------------------------------------------
+
 \begin{document}
 
 \makefrontsidebar
 
+% +--------------+
+% |   ABOUT ME   |
+% +--------------+
+%\cvsection{About Me}
+%\vspace{1em}
 
-\cvsection{Education}
+%I am a \emph{Data Scientist} at the AI and GenAI Center of Excellence (CoE) founded by Accenture and Ammagamma in Modena, where I work on Artificial Intelligence projects with industrial applications for clients in the Utilities, Resources \& Chemicals sector. I transitioned from academia bringing a strong background in scientific computing, with a particular focus on scalable systems, HPC, and cloud-based infrastructures, combined with solid experience in data-driven and AI model development.\\
+%
+% In July 2024, I obtained a PhD with honors in Smart Computing from the University of Firenze. My research focused on Deep Generative Models (in particular GANs) for ultra-fast simulation in the LHCb experiment at CERN, strengthening my expertise in large-scale modeling and performance-oriented AI.\\
+%
+%Alongside my technical work, I am strongly interested in science communication and innovation-driven environments. I value open discussion and collaboration across diverse perspectives as key enablers for impactful and sustainable technological solutions.
 
-%\cvsubsection{Postgraduate Training}
-%\begin{cvtable}[2]
-    %
-    % \cvitem{2009 -- 2010}{Post-Doc Panda Studies}{Panda Academy}
-	% {In-depth studies on the impact of bamboo nutrition for young pandas and its relation to relaxing, sleeping and snoozing parts of the day.}
-    % \cvitem{2008 -- 2009}{Research Stay Europe}{European Panda Labs}
-    % {Spending one year abroad teaching european panda facilities about the newest findings and research in the field of asian rice hat covers and applications for bamboo as a material.}
-%\end{cvtable}
+%\vspace{1em}
 
-\cvsubsection{Study}
-\begin{cvtable}[2]
-    %
-	\cvitem{2020 -- now}{Ph.D. in Smart Computing}{University of 
-	Florence}{Exploration and development of Artificial Intelligence 
-	strategies applied to Medical Physics, Nuclear Physics and Particle 
-	Physics.}
-    %
-	\cvitem{2017 -- 2020}{M.Sc. in Particle Physics}{University 
-	of Florence}{Curriculum of studies oriented to  Data Analysis with 
-	a strong focus on Artificial Intelligence techniques.\\
-	\ul{Score:} $110/110$ \emph{cum laude}}
-	%
-	\cvitem{}{Master thesis}{}{Development of a Python framework for 
-	Particle Physics simulation based on Deep Learning models.\\
-	\ul{Title:} ``Techniques for parametric simulation with deep neural 
-	networks and implementation for the LHCb experiment at CERN and its 
-	future upgrades''.}
-	%
-	\cvitem{2013 -- 2017}{B.Sc. in Physics and Astrophysics}{University 
-	of Florence}{Basic training in Physics where I	discovered a natural
-	inclination towards Experimental Physics and Data Analysis.\\
-	\ul{Score:} $110/110$}
-	%
-	\cvitem{}{Bachelor thesis}{}{Data Analysis work in Particle Physics 
-	in collaboration with the LHCb experiment at CERN.\\
-	\ul{Title:} ``Study of the charmonium resonances in $B^+ \to p \bar{p} K^+$
-	and $B^+ \to p \bar{p} \gamma K^+$ decays with the LHCb experiment at CERN''.}
-	%
-    % \cvitem{2008 -- 2013}{Previous education}
-    % {Liceo Scientifico G. Galilei di Terni}{First general smattering on Scientific Approach and Critical Thinking thanks to which I decided to continue studies in Physics.\\
-    % \ul{Score:} $100/100$ \textit{cum laude}}
-	%
-\end{cvtable}
-
-%%%%%  Other course
-%%%%% --------------
-\cvsubsection{Other courses}
-\begin{cvtable}[2]
-    %
-	\cvitem{2018 -- 2019}{Impresa Campus Unifi}{University of Florence}
-	{Development of innovative ideas and business culture in university 
-	context   with Team Building path and personal expert support.}
-	%
-	\cvitem{2018}{Palestra di Intrapredenza}{University of Florence}
-	{Evaluation of personal motivation and entrepreneurial propensity 
-	thanks to Design Thinking and LEGO Serious Play\textsuperscript{\textregistered} methods.}
-	%
-\end{cvtable}
-
-
-%%%  EXPERIENCE
-%%% ============
+% +----------------+
+% |   EXPERIENCE   |
+% +----------------+
 \cvsection{Experience}
+\vspace{-0.5em}
 
-%%%%%  Research
-%%%%% ----------
-\cvsubsection{Research}
 \begin{cvtable}[2]
     %
-    \cvitem{2020 -- now}{Graduate Researcher}{University of Florence, 
-    Firenze (IT)}{Research focused on development and deployment of 
-    Machine Learning models for the Ultra-Fast Simulation of the LHCb
-    experiment.}
+    \cvexpitem{Data Scientist}
+      {Accenture}
+      {2024 -- Present}{Modena (IT)}
+      {AI consulting role in the Utilities, Resources \& Chemicals sector, developing data-driven solutions to optimize industrial systems and decision-making processes:}
+        %
+        \skill{\faAngleRight}{Led the design and industrialization of \textbf{data-driven optimizers for oil and gas applications}, integrating AI-based surrogate models to calibrate and optimize production systems using field data}\\
+        %
+        \skill{\faAngleRight}{Led multidisciplinary teams of Data Scientists and Software Engineers to develop and deploy \textbf{AI solutions within custom web applications} for industrial clients}\\
+        %
+        \skill{\faAngleRight}{Explored the \textbf{scalability of industrial optimization problems} on HPC infrastructures and emerging Quantum Computing paradigms}\\
+        %
+%        \skill{\faAngleRight}{Designed and implemented a \textbf{simulation orchestrator} to efficiently sample and generate data for training and improving AI-based surrogate models of gas storage systems}\\
+        %
+        \skill{\faAngleRight}{Delivered \textbf{technical training on Anomaly Detection} to client Data Science teams in the materials industry}\\
+        %
+        \skill{\faAngleRight}{Contributed to the design of \textbf{AI and GenAI proposals} for client tenders}\\
+        %
+    \vspace{-1em}
+    \raisebox{0.8em}{%
+        \hdashrule{\linewidth}{0.1pt}{2pt 2pt}%
+    }\\ [-1em]
     %
-    \cvitem{2020}{Student Researcher}{INFN-Florence, Firenze (IT)}
-    {Traineeship focused on application of Artificial Intelligence 
-    techniques to High Energy Physics.}
+    \cvexpitem{Technological Researcher}
+      {INFN-CNAF}
+      {2023 -- 2024}{Bologna (IT)}
+      {Research position within the ICSC project, contributing to the operation of large-scale cloud and data center services:}
+        %
+        \skill{\faAngleRight}{Extended the LHCb fast simulation framework to run on \textbf{federated and heterogeneous computing infrastructures}}\\
+        %
+        \skill{\faAngleRight}{Served as the data center technical contact for LHCb, monitoring the use of \textbf{large-scale storage and computing resources} for simulation workflows}\\
+        %
+        \skill{\faAngleRight}{Designed and implemented a \textbf{GenAI-powered chatbot} to enhance user support services at the data center}\\
+        %
+    \vspace{-1em}
+    \raisebox{0.8em}{%
+        \hdashrule{\linewidth}{0.1pt}{2pt 2pt}%
+    }\\ [-1em]
     %
-    \cvitem{2019}{Research Intern}{CERN, Geneva (CH)}{Research focused 
-    on development of Deep Learning models to parameterize the LHCb 
-    particle identification system.}
+    \cvexpitem{Doctoral Student}
+      {University of Firenze} 
+	  {2020 -- 2024}{Firenze (IT)}
+      {Ph.D. at the intersection of Particle Physics and Computer Science, applying AI and scalable computing to scientific simulation:}
+        %
+        \skill{\faAngleRight}{Designed a cloud-based microservice orchestrating \textbf{large-scale optimization workflows} across on-premise, cloud, and HPC resources}\\
+        %
+        \skill{\faAngleRight}{Developed and optimized \textbf{GAN-based models for fast simulation} of the LHCb detector response using heterogeneous infrastructures}\\
+        %
+        \skill{\faAngleRight}{Integrated the optimized models into a pure Python simulation framework, achieving up to $\times 1000$ speed-up and \textbf{accelerating Physics analyses}}\\
+        %
+    \vspace{-1em}
+    \raisebox{0.8em}{%
+        \hdashrule{\linewidth}{0.1pt}{2pt 2pt}%
+    }\\ [-1em]
     %
-\end{cvtable}
-
-%%%%%  Teaching
-%%%%% ----------
-\cvsubsection{Teaching}
-\begin{cvtable}[2]
+%	\cvexpitem{Senior Tutor}
+%      {University of Firenze} 
+%	  {2020 -- 2023}{Firenze (IT)}
+%      {Scholarship funded by a local grant from the University of Firenze for a total of 150 hours/year to give introductory lessons on Python, discuss Physics exercises and support Physics Laboratory activities}
     %
-	\cvitem{2020 -- 2021}{Teaching Assistant}{University of Florence, 
-	Firenze (IT)}{Responsible for introductory lessons to Python for 
-	third year students of the B.Sc. in Physics of the University of 
-	Florence.}
+%    \vspace{-1em}
+%    \raisebox{0.8em}{%
+%        \hdashrule{\linewidth}{0.1pt}{2pt 2pt}%
+%    }\\ [-1em]
+    %
+%    \cvexpitem{Intern}
+%      {INFN}
+%      {2020}{Firenze (IT)}
+%      {Curricular internship at the INFN Florence Division for a total of 150 hours dedicated to software development and AI models validation}
 	%
-	\cvitem{2018 -- now}{Laboratory Tutor}{University of Florence, 
-	Firenze (IT)}{Support to Physics Laboratory activities for the 
-	B.Sc. in Biological Sciences, Mathematics and Physics of the 
-	University of Florence.}
-	%
-    % \cvitem{2018}{Student assistant}{University of Florence}{Welcome 
-    % and orientation service for science students.}
+%    \vspace{-1em}
+%    \raisebox{0.8em}{%
+%        \hdashrule{\linewidth}{0.1pt}{2pt 2pt}%
+%    }\\ [-1em]
     %
-    % \cvitem{2016 -- now}{Maths and Physics Reps Teacher}{}{Private 
-    % lessons for high-school and university students.}
+%	\cvexpitem{Tutor}
+%      {University of Firenze}
+%      {2018 -- 2020}{Firenze (IT)}
+%      {Scholarship funded by a local grant from the University of Firenze for a total of 200 hours/year to give introductory lessons on Python, discuss Physics exercises and support Physics Laboratory activities}
+	%
+%    \vspace{-1em}
+%    \raisebox{0.8em}{%
+%        \hdashrule{\linewidth}{0.1pt}{2pt 2pt}%
+%    }\\ [-1em]
+    %
+    \cvexpitem{Research Intern}
+      {CERN}
+      {2019}{Geneva (CH)}
+      {Selected for a three-month research internship at CERN to explore the use of \textbf{Deep Generative Models} (in particular GANs) for \textbf{fast simulation} within the LHCb experiment, marking my first hands-on experience with AI-driven approaches in large-scale scientific computing}
+    %
+%    \vspace{-1em}
+%    \raisebox{0.8em}{%
+%        \hdashrule{\linewidth}{0.1pt}{2pt 2pt}%
+%    }\\ [-1em]
+    %
+%    \cvexpitem{Junior Tutor}
+%      {University of Firenze}
+%      {2018}{Firenze (IT)}
+%      {Scholarship funded by a local grant from the University of Firenze for a total of 200 hours to take part to scientific dissemination event and support new students with orientation service}
+    %
+%    \vspace{-1em}
+%    \raisebox{0.8em}{%
+%        \hdashrule{\linewidth}{0.1pt}{2pt 2pt}%
+%    }\\ [-1em]
+    %
+%    \cvexpitem{Intern}
+%      {CERN}
+%      {2017}{Geneva (CH)}
+%      {Internship of two weeks at CERN funded by a local grant from the University of Firenze to finalize the bachelor thesis}
     %
 \end{cvtable}
 
 \newpage
 \makebacksidebar
 
-%%%%%  AISF
-%%%%% ------
-\cvsubsection{Italian Association of Physics Student}
+% +---------------+
+% |   EDUCATION   |
+% +---------------+
+\cvsection{Education}
+\vspace{-0.5em}
+
 \begin{cvtable}[2]
     %
-	\cvitem{2019 -- 2021}{Secretary}{}{Member of the Executive 
-	Committee that manages and coordinates events and activities 
-	together with the national Local Committees.}
+	\cveduitem{Ph.D. in Smart Computing}
+      {University of Firenze}
+      {2020 -- 2024}{Firenze (IT)}{Ph.D. entitled \emph{cum laude}}
+      {\ul{Thesis:} Development of a scalable fast simulation framework for the LHCb experiment at CERN, based on Deep Generative Models and large-scale training on HPC and Cloud systems}
+    %
+    \vspace{-1em}
+    \raisebox{0.8em}{%
+        \hdashrule{\linewidth}{0.1pt}{2pt 2pt}%
+    }\\ [-1em]
+    %
+	\cveduitem{M.Sc. in Particle Physics}
+      {University of Firenze}
+      {2017 -- 2020}{Firenze (IT)}{$110/110$ \emph{cum laude}}
+      {\ul{Thesis:} Design of a Python-based simulation framework using AI surrogate models for fast detector simulation in the LHCb experiment at CERN}
 	%
-	\cvitem{2018 -- 2019}{President of the Florence Local 
-	Committee}{}{Organization of outreach events and representative 
-	role for about 40 members from the University of Florence.}
-	%
-	\cvitem{2018 -- 2021}{Member of the Editorial Board of 
-	\textit{Sistemi di Riferimento}}{}{Scientific dissemination 
-	with articles and live interviews to promote the research 
-	activity of Italian Physics Departments.}
+    \vspace{-1em}
+    \raisebox{0.8em}{%
+        \hdashrule{\linewidth}{0.1pt}{2pt 2pt}%
+    }\\ [-1em]
+    %
+	\cveduitem{B.Sc. in Physics and Astrophysics}
+      {University of Firenze}
+      {2013 -- 2017}{Firenze (IT)}{$110/110$}
+      {\ul{Thesis:} Data analysis and validation of simulated Particle Physics datasets from the LHCb experiment at CERN}
 	%
 \end{cvtable}
 
-%%%%%  Other experiences
-%%%%% -------------------
-%\cvsubsection{Other experiences}
+\vspace{1em}
+
+% +--------------+
+% |   LICENSES   |
+% +--------------+
+\cvsection{Licenses \& Certifications}
+\vspace{-0.5em}
+
+\begin{cvtable}[2]
+    %
+%    \cvcertitem{Quantum Computation using Qiskit v2.X Developer - Associate}
+%      {IBM}{\faClipboardCheck \, Certification}{2026}
+    %
+%    \vspace{-1em}
+%    \raisebox{0.8em}{%
+%        \hdashrule{\linewidth}{0.1pt}{2pt 2pt}%
+%    }\\ [-1em]
+    %
+%    \cvcertitem{Azure AI Engineer Associate (AI-102)}
+%      {Microsoft}{\faClipboardCheck \, Certification}{2026}
+    %
+%    \vspace{-1em}
+%    \raisebox{0.8em}{%
+%        \hdashrule{\linewidth}{0.1pt}{2pt 2pt}%
+%    }\\ [-1em]
+    %
+%    \cvcertitem{Azure AI Fundamentals (AI-900)}
+%      {Microsoft}{\faClipboardCheck \, Certification}{2026}
+    %
+%    \vspace{-1em}
+%    \raisebox{0.8em}{%
+%        \hdashrule{\linewidth}{0.1pt}{2pt 2pt}%
+%    }\\ [-1em]
+    %
+%    \cvcertitem{Quantum Chemistry with VQE}
+%      {IBM}{\faAward \, Badge}{???}
+    %
+%    \vspace{-1em}
+%    \raisebox{0.8em}{%
+%        \hdashrule{\linewidth}{0.1pt}{2pt 2pt}%
+%    }\\ [-1em]
+    %
+%    \cvcertitem{Variational Algorithm Design}
+%      {IBM}{\faAward \, Badge}{???}
+    %
+%    \vspace{-1em}
+%    \raisebox{0.8em}{%
+%        \hdashrule{\linewidth}{0.1pt}{2pt 2pt}%
+%    }\\ [-1em]
+    %
+    \cvcertitem{Quantum Machine Learning}
+      {IBM}{\faAward \, Badge}{2026}
+    %
+    \vspace{-1em}
+    \raisebox{0.8em}{%
+        \hdashrule{\linewidth}{0.1pt}{2pt 2pt}%
+    }\\ [-1em]
+    %
+%    \cvcertitem{Practical Introduction to Quantum-Safe Cryptography}
+%      {IBM}{\faAward \, Badge}{???}
+    %
+%    \vspace{-1em}
+%    \raisebox{0.8em}{%
+%        \hdashrule{\linewidth}{0.1pt}{2pt 2pt}%
+%    }\\ [-1em]
+    %
+%    \cvcertitem{Quantum Business Foundations}
+%      {IBM}{\faAward \, Badge}{???}
+    %
+%    \vspace{-1em}
+%    \raisebox{0.8em}{%
+%        \hdashrule{\linewidth}{0.1pt}{2pt 2pt}%
+%    }\\ [-1em]
+    %
+%    \cvcertitem{Quantum Diagonalization Algorithms}
+%      {IBM}{\faAward \, Badge}{???}
+    %
+%    \vspace{-1em}
+%    \raisebox{0.8em}{%
+%        \hdashrule{\linewidth}{0.1pt}{2pt 2pt}%
+%    }\\ [-1em]
+    %
+%    \cvcertitem{General Formulation of Quantum Information}
+%      {IBM}{\faAward \, Badge}{???}
+    %
+%    \vspace{-1em}
+%    \raisebox{0.8em}{%
+%        \hdashrule{\linewidth}{0.1pt}{2pt 2pt}%
+%    }\\ [-1em]
+    %
+%    \cvcertitem{Fundamentals of Quantum Algorithms}
+%      {IBM}{\faAward \, Badge}{2026}
+    %
+%    \vspace{-1em}
+%    \raisebox{0.8em}{%
+%        \hdashrule{\linewidth}{0.1pt}{2pt 2pt}%
+%    }\\ [-1em]
+    %
+    \cvcertitem{Basics of Quantum Information}
+      {IBM}{\faAward \, Badge}{2025}
+    %
+\end{cvtable}
+
+%\vspace{1em}
+
+% +-----------------+
+% |   CONFERENCES   |
+% +-----------------+
+%\cvsection{Conferences \& Workshops}
+%\vspace{-0.5em}
+
 %\begin{cvtable}[2]
     %
-    % \cvitem{2016}{Science Library assistant}{University of Florence,
-    % Firenze (IT)}{Support to science library workers and book 
-    % arrangement.}
+%    \cvconfitem{42nd ICHEP conference}
+%      {2024}{Prague (CZ)}
+%      {Participation with a talk on a flash simulation framework for Particle Physics based on Generative AI during an international conference}
     %
-    % \cvitem{2011 -- 2013}{Basketball officer}{Federazione Italiana 
-    % Pallacanestro, Terni (IT)}{Referee assistant during basketball 
-    % matches.}
+%    \cvconfitem{Workshop on computing at INFN}
+%      {2024}{Palau (IT)}
+%      {Participation with a talk on a NLP GenAI solution for enhancing the CNAF User Support unit during  a national workshop}
+    %
+%    \cvconfitem{1st EuCAIF conference}
+%      {2024}{Amsterdam (NL)}
+%      {Participation with a poster on a GenAI-based simulation framework for Particle Physics during an international conference}
+    %
+%    \cvconfitem{Fifth ML-INFN Hackathon: Advanced Level}
+%      {2023}{Pisa (IT)}
+%      {Tutorial preparation for an educational event on Machine Learning organized by INFN}
+    %
+%    \cvconfitem{26th CHEP conference}
+%      {2023}{Norfolk, Virginia (USA)}
+%      {Participation with a talk on a GenAI-based simulation framework for Particle Physics during an international conference}
+    %
+%    \cvconfitem{Third ML-INFN Hackathon: Advanced Level}
+%      {2022}{Bari (IT)}
+%      {Teaching activity during an educational event on Machine Learning organized by INFN}
+    %
+%    \cvconfitem{21st ACAT workshop}
+%      {2022}{Bari (IT)}
+%      {Participation with two posters on Machine Learning applications to Particle Physics during an international workshop}
+    %
+%    \cvconfitem{108\textdegree\ Congresso Nazionale della SIF}
+%      {2022}{Milan (IT)}
+%      {Participation with a talk on a Machine Learning application to Medical Physics to a national conference}
+    %
+%    \cvconfitem{4th European Congress of Medical Physics}
+%      {2022}{Dublin (IE)}
+%      {Participation with a talk on a Machine Learning application to Medical Physics during an international conference}
+    %
+%    \cvconfitem{Learning to Discover}
+%      {2022}{Orsay (FR)}
+%      {Participation with a talk on Machine Learning applications to Particle Physics during an international conference}
+    %
+%    \cvconfitem{107\textdegree\ Congresso Nazionale della SIF}
+%      {2021}{online}
+%      {\ul{Talk:} ``Simulating the LHCb detector with GANs''}
+    %
+%    \cvconfitem{First ML-INFN Hackathon}
+%      {2021}{online}
+%      {\ul{Theme:} Introduction to Machine Learning topics interesting for INFN (use-case selected: Medical Physics)}
+    %
+%    \cvconfitem{Workshop della Commissione Calcolo e Reti dell'INFN}
+%      {2021}{online}
+%      {\ul{Talk:} ``Simulating the LHCb detector with GANs''}
+    %
+%    \cvconfitem{1st CloudBank EU Workshop}
+%      {2021}{online}
+%      {\ul{Talk:} ``LHCb deployment in AWS''}
+    %
+%	\cvconfitem{Artificial Intelligence in Health and Well-Being}
+%      {2019}{Firenze (IT)}
+%      {\ul{Theme:} Artificial Intelligence applied to health and well-being}
     %
 %\end{cvtable}
 
+\vspace{1em}
 
-%%%  CONFERENCES
-%%% =============
-\cvsection{Conferences, Workshops and Schools}
+% +--------------+
+% |   OUTREACH   |
+% +--------------+
+\cvsection{Outreach \& Dissemination}
+\vspace{-0.5em}
+
 \begin{cvtable}[2]
     %
-    \cvitem{2022}{Learning to Discover}{Orsay, France}
-    {\ul{Talk:} ``Simulating the LHCb experiment with Generative Models''}
+    \cvgenitem{Plenary speaker}
+      {2024}{Fondazione Uniser Pistoia}
+      {Invited plenary talk on Artificial Intelligence applications in Physics, delivered within a science outreach seminar series organized by Uniser Pistoia (Tuscany, Italy)}
     %
-    \cvitem{2021}{LPCC Fast Detector Simulation Workshop}
-    {online}{\ul{Talk:} ``OptunAPI''}
+    [-0.3em]
     %
-    \cvitem{2021}{107\textdegree\ Congresso Nazionale della SIF}
-    {online}{\ul{Talk:} ``Simulating the LHCb detector 
-    with GANs''}
+    \cvgenitem{Plenary speaker}
+      {2023}{Festival della Scienza Alto Vicentino}
+      {Invited plenary talk on Artificial Intelligence at a city-wide science outreach festival held in Schio (Veneto, Italy)}
     %
-    \cvitem{2021}{8th Thematic CERN School of Computing}{online}
-    {\ul{Theme:} Scientific software for heterogeneous 
-    architectures}
+    [-0.3em]
     %
-    % \cvitem{2021}{First ML-INFN Hackathon}{online}{\ul{Theme:} 
-    % Introduction to Machine Learning topics interesting for INFN 
-    % (use-case selected: Medical Physics)}
-    %
-    \cvitem{2021}{Workshop della Commissione Calcolo 
-    e Reti dell'INFN}
-    {online}{\ul{Talk:} ``Simulating the LHCb detector 
-    with GANs''}
-    %
-    \cvitem{2021}{1st CloudBank EU Workshop}{online}{\ul{Talk:} 
-    ``LHCb deployment in AWS''}
-    %
-    % \cvitem{2020}{2nd Summer School in Physical Sensing and Processing}
-    % {online}{\ul{Theme:} Sensing devices, DAQ systems and data processing}
-    %
-	% \cvitem{2019}{Artificial Intelligence in Health and Well-Being}
-	% {Firenze (IT)}{\ul{Theme:} Artificial Intelligence applied to health 
-	% and well-being}
+    \cvgenitem{Book author}
+      {2021}{Sassi Junior}
+      {Contributor, on behalf of INFN, to a children’s science book featuring a section dedicated to Artificial Intelligence}
     %
 \end{cvtable}
 
+%\vspace{1em}
 
-%%%  OUTREACH
-%%% ==========
-\cvsection{Outreach and Dissemination}
-\begin{cvtable}[2]
+% +------------+
+% |   AWARDS   |
+% +------------+
+%\cvsection{Honors \& Awards}
+%\vspace{-0.5em}
+
+%\begin{cvtable}[2]
     %
-    \cvitem{2021}{Book author}{Sassi Junior}{On behalf of the INFN, 
-    I have prepared a paragraph dedicated to Artificial Intelligence 
-    for ``Inventions'', a science book for kids.}
+%    \cvawitem{2025 Breakthrough Prize in Fundamental Physics}
+%      {Breakthrough Prize Foundation}{2025}
+%      {TBA}
     %
-	\cvitem{2018}{Jury member}{Premio Galileo}{``Premio Galileo'' is 
-	a literary prize for science communication.}
+%    \cvawitem{``Giulia Vita Finzi'' award}
+%      {INFN}{2022}
+%      {National INFN award for the best Master thesis on computing and networks}
+    %
+%    \cvawitem{Ph.D. Scholarship in Smart Computing}
+%      {INFN}{2020 -- 2023}
+%      {Scholarship to explore and develop Artificial Intelligence techniques for Medical and Particle Physics}
+    %
+%	\cvawitem{Scholarship for research activity}
+%      {INFN}{2019}
+%      {National grant to pass three months at CERN for research activity}
 	%
-	\cvitem{2017 -- 2018}{Blog author}{Fisici Senza Palestra}{Dissemination 
-	of science on ``Fisici Senza Palestra'' blog.}
+%	\cvawitem{Scholarship for thesis abroad}
+%      {University of Firenze}{2017}
+%	   {Local grant to pass ten days at CERN for Bachelor thesis}
 	%
-\end{cvtable}
-
-
-%%%  AWARDS
-%%% ========
-\cvsection{Awards}
-\begin{cvtable}[2]
-    %
-    \cvitem{2021}{``Giulia Vita Finzi'' award}{INFN}
-    {National award for the best Master Thesis on computing of INFN.}
-    %
-    \cvitem{2020 -- 2023}{Ph.D. Scholarship in Smart Computing}{INFN}
-    {Scholarship to carry out Artificial Intelligence techniques for 
-    High Energy Physics applications.}
-    %
-	\cvitem{2019}{Scholarship for research activity}{INFN}{National grant to pass three months at CERN for research activity.}
-	%
-	\cvitem{2017}{Scholarship for thesis abroad}{University of Florence}
-	{Local grant to pass ten days at CERN for bachelor thesis.}
-	%
- 	% \cvitem{2013}{Scholar merit award}{Liceo Scientifico G. Galilei di Terni}
- 	% {Merit award for the excellence of high-school career.}
-	%
-\end{cvtable}
-
-
-%%%  PUBLICATIONS
-%%% ==============
-%\cvsection{Publications}
-%\begin{cvtable}
-    %
-    % \cvpubitem{Cooking: 100 recipes for lazy Pandas}{Me and My Panda 
-    % Friends}{Panda's Culinary World}{2010}
-    %
-    % \cvpubitem{Pandastasia}{Still Me}{Bamboo Books Assoc.}{2005}
-    %
-%\end{cvtable}
-
-
-%\cvsection{Extra-Curricular Activities}
-%\begin{cvtable}
-    % \cvitemshort{Relaxing}{Master the fine art of relaxing everywhere}
-    % \cvitemshort{Music}{Playing the bamboo flute in the 1st Panda Orchestra}
-    % \cvitemshort{Education}{Teaching young pandas to be more panda-like}
-%\end{cvtable}
-
-
-%\cvsection{section}
-%\cvsubsection{Subsection}
-%\begin{cvtable}
-    % \cvitem{<dates>}{<cv-item title>}{<location>}{<optional: description>}
-%\end{cvtable}
-
-
-%\cvsubsection{One-line without description}
-%\begin{cvtable}
-    % \cvitem{Award}{One-line description}{Sponsor}{}
-    % \cvitem{Award}{One-line description}{Sponsor}{}
-    % \cvitem{Award}{One-line description}{Sponsor}{}
-%\end{cvtable}
-
-%\cvsection{cvitemshort}
-%\cvsubsection{One-line}
-%\begin{cvtable}
-    % \cvitemshort{Key}{Some further description}
-    % \cvitemshort{Key}{Some further description}
-    % \cvitemshort{Key}{Some further description}
-%\end{cvtable}
-
-%\cvsubsection{Multi-line with longer description}
-%\begin{cvtable}
-    % \cvitemshort{Key}{Some further description. Can fill even more than
-    % only one single line while still keeping the correct indentation level.}
-    % \cvitemshort{Key}{Some further description. Can fill even more than
-    % only one single line while still keeping the correct indentation level.}
-    % \cvitemshort{Key}{Some further description. Can fill even more than
-    % only one single line while still keeping the correct indentation level.}
-%\end{cvtable}
-
-%\cvsection{cvpubitem}
-%\begin{cvtable}
-    % \cvpubitem{Publication title}{Authors}{Journal}{Year}
-    % \cvpubitem{Publication title}{Authors}{Journal}{Year}
-    % \cvpubitem{Publication title that is spanning over multiple lines and still does not look too bad}{Authors}{Journal}{Year}
 %\end{cvtable}
 
 \cvsignature
