@@ -11,4 +11,4 @@
 * Application CV for PhD in Smart Computing at the University of Florence [[PDF](https://github.com/mbarbetti/cv-barbetti/blob/main/academic-cv/phd-applications/cv-firenze-smart-computing.pdf)] [[src](https://github.com/mbarbetti/cv-barbetti/blob/main/academic-cv/phd-applications/src/firenze-smart-computing.tex)]
 
 ### Professional CV
-* Latest CV [[PDF](https://github.com/mbarbetti/cv-barbetti/blob/main/professional-cv/main/cv-barbetti.pdf)] [[src](https://github.com/mbarbetti/cv-barbetti/blob/main/professional-cv/main/src)]
+* Latest CV [[PDF](https://github.com/mbarbetti/cv-barbetti/blob/main/professional-cv/main/cv_barbetti_blue.pdf)] [[src](https://github.com/mbarbetti/cv-barbetti/blob/main/professional-cv/main/src)]
